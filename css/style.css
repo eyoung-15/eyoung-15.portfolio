@@ -1,7 +1,7 @@
 :root {
   --color-background: #F6F2EC;
   --color-paper: #FCFAF7;
-  --color-paper-alt: #EAE3DA;
+  --color-paper-alt:  #B592A0;;
   --color-ink: #30262C;
   --color-muted: #665B60;
   --color-muted-light: #8D8184;
@@ -97,7 +97,7 @@ img {
   top: 0;
   height: var(--header-height);
   border-bottom: 1px solid rgba(216, 203, 203, 0.75);
-  background: rgba(246, 242, 236, 0.94);
+  background:  #B592A0;
   backdrop-filter: blur(14px);
 }
 
@@ -115,11 +115,6 @@ img {
   font-size: 1.03rem;
   font-weight: 700;
   letter-spacing: -0.035em;
-}
-
-.wordmark-period,
-.footer-wordmark span {
-  color: var(--color-accent);
 }
 
 .site-nav {
