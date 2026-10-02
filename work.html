@@ -1,28 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Defines character encoding and mobile viewport settings. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Browser tab title. -->
   <title>Projects — Emily Youngward</title>
 
+  <!-- Loads the Poppins font from Google Fonts. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Shared website styling and navigation JavaScript. -->
   <link rel="stylesheet" href="css/style.css">
   <script src="javascript/main.js" defer></script>
 </head>
 
 <body>
+  <!-- Allows keyboard users to bypass the navigation. -->
   <a class="skip-link" href="#main-content">Skip to content</a>
 
+  <!-- Site-wide header and navigation. -->
   <header class="site-header">
     <div class="header-inner">
+
+      <!-- Logo links to the home page. -->
       <a class="wordmark" href="index.html" aria-label="Emily Youngward home">
         emily youngward<span>.</span>
       </a>
 
+      <!-- Mobile menu button controlled by main.js. -->
       <button class="menu-toggle" type="button"
         aria-label="Open navigation"
         aria-expanded="false"
@@ -31,6 +41,7 @@
         <span></span>
       </button>
 
+      <!-- Navigation links. The active class marks the current page. -->
       <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
         <a class="nav-link" href="index.html">home</a>
         <a class="nav-link active" href="work.html" aria-current="page">projects</a>
@@ -41,8 +52,9 @@
   </header>
 
   <main id="main-content">
-    <section class="page-hero section-shell">
 
+    <!-- Page heading and short introduction. -->
+    <section class="page-hero section-shell">
       <h1>my<span class="accent-text">projects.</span></h1>
 
       <p class="page-hero-description">
@@ -51,8 +63,13 @@
       </p>
     </section>
 
+    <!-- List of project case studies. -->
     <section class="work-list section-shell">
+
+      <!-- Project one. The ID connects to links from the home page. -->
       <article class="case-study" id="project-one">
+
+        <!-- Visual placeholder for a future project screenshot. -->
         <div class="case-study-visual project-visual-mauve">
           <span class="project-placeholder-label">Add project screenshot</span>
           <div class="placeholder-window">
@@ -63,6 +80,7 @@
           </div>
         </div>
 
+        <!-- Project information and placeholder description. -->
         <div class="case-study-content">
           <p class="project-type">Project 01 · Mobile application</p>
           <h2>Project title</h2>
@@ -73,6 +91,7 @@
             contribution separately from the team's work.
           </p>
 
+          <!-- Tags for role, technologies, and project year. -->
           <div class="tag-list">
             <span>Your role</span>
             <span>Tools used</span>
@@ -83,7 +102,9 @@
         </div>
       </article>
 
+      <!-- Project two. -->
       <article class="case-study" id="project-two">
+
         <div class="case-study-visual project-visual-cream">
           <span class="project-placeholder-label">Add project screenshot</span>
           <div class="placeholder-browser">
@@ -115,7 +136,9 @@
         </div>
       </article>
 
+      <!-- Project three. -->
       <article class="case-study" id="project-three">
+
         <div class="case-study-visual project-visual-rose">
           <span class="project-placeholder-label">Add project screenshot</span>
           <div class="placeholder-art">
@@ -145,10 +168,12 @@
       </article>
     </section>
 
+    <!-- Contact panel shared with the other pages. -->
     <section class="contact-section section-shell" id="contact">
       <div class="contact-panel">
         <h2>Have a project or opportunity in mind?</h2>
         <p>I’d be happy to hear from you.</p>
+
         <a class="button button-light"
            href="https://www.linkedin.com/in/emily-youngward-a0785a405"
            target="_blank"
@@ -159,6 +184,7 @@
     </section>
   </main>
 
+  <!-- Footer with links to professional profiles. -->
   <footer class="site-footer">
     <div class="footer-inner">
       <a class="footer-wordmark" href="index.html">
