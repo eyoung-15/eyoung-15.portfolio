@@ -289,13 +289,8 @@ h3 {
   letter-spacing: -0.035em;
 }
 
-.accent-text,
-.hero-heading-accent {
+.accent-text {
   color: var(--color-accent-dark);
-}
-
-.hero-heading-accent {
-  display: block;
 }
 
 
@@ -397,77 +392,6 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   gap: 1.35rem;
-}
-
-.hero-art {
-  position: relative;
-  display: grid;
-  width: min(100%, 410px);
-  aspect-ratio: 1;
-  place-items: center;
-  justify-self: end;
-  border-radius: 50%;
-  background: var(--color-accent-light);
-}
-
-.hero-art::before,
-.hero-art::after {
-  position: absolute;
-  border: 1px solid rgba(128, 92, 107, 0.25);
-  border-radius: 50%;
-  content: "";
-}
-
-.hero-art::before {
-  width: 82%;
-  height: 82%;
-}
-
-.hero-art::after {
-  width: 64%;
-  height: 64%;
-}
-
-.hero-art-circle {
-  position: absolute;
-  width: 46%;
-  height: 46%;
-  border: 1px solid rgba(128, 92, 107, 0.4);
-  border-radius: 50%;
-  transform: rotate(-25deg) scaleX(1.5);
-}
-
-.hero-art-inner {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  width: 45%;
-  aspect-ratio: 1;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--color-accent);
-  color: var(--color-ink);
-}
-
-.hero-art-inner span {
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 600;
-  letter-spacing: -0.12em;
-  transform: translateX(-0.06em);
-}
-
-.hero-art-caption {
-  position: absolute;
-  z-index: 2;
-  bottom: 12%;
-  left: 50%;
-  color: var(--color-muted);
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  transform: translateX(-50%);
 }
 
 /* Introduction */
@@ -758,8 +682,7 @@ h3 {
 }
 
 /* Contact */
-.contact-section,
-.about-contact {
+.contact-section{
   padding-block: 2rem 6rem;
 }
 
@@ -857,7 +780,7 @@ h3 {
   color: var(--color-muted);
 }
 
-.case-study-heading .project-type {
+.project-type {
   margin-bottom: 0.65rem;
 }
 
@@ -1046,6 +969,8 @@ h3 {
   transform: translateY(0);
 }
 
+
+
 /* Responsiveness */
 
 
@@ -1070,10 +995,6 @@ h3 {
     grid-template-columns: 1fr 0.7fr;
     gap: 2rem;
     padding-block: 4.5rem;
-  }
-
-  .hero-art {
-    width: 100%;
   }
 
   .intro-section {
@@ -1185,15 +1106,6 @@ h3 {
     font-size: clamp(2.8rem, 13vw, 4.5rem);
   }
 
-  .hero-art {
-    width: min(78%, 320px);
-    justify-self: center;
-  }
-
-  .hero-art-inner span {
-    font-size: 4rem;
-  }
-
   .intro-section,
   .featured-work,
   .capabilities-section {
@@ -1253,13 +1165,7 @@ h3 {
     padding: 1.3rem;
   }
 
-  .work-contact-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .contact-section,
-  .about-contact {
+  .contact-section{
     padding-bottom: 4rem;
   }
 
