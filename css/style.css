@@ -1,3 +1,26 @@
+/*
+  Emily Youngward — Portfolio Stylesheet
+
+  This stylesheet controls the appearance and layout of all three
+  portfolio pages: Home, Projects, and About.
+
+  The styles are organized into sections for easier maintenance.
+  Shared styles are defined first, followed by page-specific styles
+  and responsive adjustments.
+*/
+
+/* ==================================================
+   1. CSS VARIABLES
+   ==================================================
+
+   CSS custom properties store reusable values.
+
+   Using variables for colours, fonts, spacing, and transitions
+   makes it easier to maintain a consistent design across pages.
+
+   Variables are accessed using var(--variable-name).
+*/
+
 :root {
   --color-background: #FFFDF7;
   --color-paper: #FFFFFF;
@@ -21,6 +44,16 @@
   --shadow-soft: 0 12px 35px rgba(35, 9, 3, 0.07);
 }
 
+
+/* ==================================================
+   2. GLOBAL STYLES
+   ==================================================
+
+   These rules establish the default appearance of HTML elements.
+
+   The universal selector applies box-sizing to every element,
+   making width and height calculations more predictable.
+*/
 * {
   box-sizing: border-box;
 }
@@ -76,12 +109,35 @@ img {
   transform: translateY(0);
 }
 
+
+/*
+  Shared content container.
+
+  The min() function prevents the container from exceeding
+  the maximum content width while maintaining responsive
+  spacing on smaller screens.
+
+  margin-inline: auto centres the container horizontally.
+*/
 .section-shell {
   width: min(100% - (var(--page-gutter) * 2), var(--content-width));
   margin-inline: auto;
 }
 
 /* Header */
+
+
+/* ==================================================
+   3. HEADER AND NAVIGATION
+   ==================================================
+
+   The header is shared across all pages.
+
+   position: sticky keeps it at the top of the viewport
+   while scrolling, without removing it from the document flow.
+
+   z-index ensures the header appears above page content.
+*/
 
 .site-header {
   position: sticky;
@@ -113,6 +169,14 @@ img {
 .footer-wordmark span {
   color: var(--color-white);
 }
+
+/*
+  Desktop navigation uses Flexbox to arrange the links horizontally.
+
+  The gap property controls the spacing between navigation items.
+  clamp() allows the spacing to adjust between a minimum and maximum
+  value depending on the viewport width.
+*/
 
 .site-nav {
   display: flex;
@@ -146,6 +210,18 @@ img {
 }
 
 /* Typography */
+
+/* ==================================================
+   4. TYPOGRAPHY
+   ==================================================
+
+   Shared text styles establish the visual hierarchy.
+
+   clamp() creates fluid font sizes that adjust with viewport width
+   while respecting minimum and maximum sizes.
+
+   Letter-spacing is used to adjust the spacing between characters.
+*/
 
 .eyebrow,
 .section-kicker,
@@ -226,6 +302,18 @@ h3 {
 }
 
 /* Buttons and links */
+
+/* ==================================================
+   5. BUTTONS AND LINKS
+   ==================================================
+
+   These styles are reused across the website.
+
+   Inline-flex allows button text and decorative arrows to sit
+   together while supporting alignment and spacing.
+
+   Transitions create subtle hover effects.
+*/
 
 .button {
   display: inline-flex;
@@ -630,6 +718,14 @@ h3 {
   border-top: 1px solid var(--color-line);
 }
 
+/*
+  The capabilities section uses CSS Grid to separate the heading
+  from the list of interests.
+
+  Grid columns control the relative width of each area.
+  The gap property creates space between the columns.
+*/
+
 .capabilities-layout {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -739,6 +835,18 @@ h3 {
   padding-block: 3.5rem;
   border-bottom: 1px solid var(--color-line);
 }
+
+
+
+/*
+  Alternating project layout.
+
+  nth-child(even) selects every second case study.
+  Changing the visual's order creates an alternating image/text
+  arrangement on wider screens.
+
+  The responsive stylesheet resets this order on smaller screens.
+*/
 
 .case-study:nth-child(even) .case-study-visual {
   order: 2;
@@ -925,6 +1033,21 @@ h3 {
 
 /* Subtle reveal animation */
 
+/* ==================================================
+   SCROLL REVEAL ANIMATION
+   ==================================================
+
+   JavaScript adds the "reveal" class to selected elements
+   when the page loads.
+
+   Elements begin slightly transparent and shifted downward.
+
+   When JavaScript detects that an element enters the viewport,
+   it adds the "visible" class.
+
+   CSS transitions animate the change in opacity and position.
+*/
+
 .reveal {
   opacity: 0;
   transform: translateY(12px);
@@ -939,6 +1062,17 @@ h3 {
 }
 
 /* Responsive */
+
+/* ==================================================
+   RESPONSIVE LAYOUT — TABLET
+   ==================================================
+
+   These rules adjust the layout when the viewport is 850px
+   wide or narrower.
+
+   Grid layouts become simpler, spacing is reduced, and
+   elements are rearranged to fit smaller screens.
+*/
 
 @media (max-width: 850px) {
   :root {
@@ -986,6 +1120,16 @@ h3 {
   }
 }
 
+/* ==================================================
+   RESPONSIVE LAYOUT — MOBILE
+   ==================================================
+
+   These rules apply at 640px and below.
+
+   The desktop navigation is replaced with a collapsible menu.
+   Multi-column layouts become single-column layouts.
+   Spacing and typography are adjusted for smaller screens.
+*/
 @media (max-width: 640px) {
   .menu-toggle {
     display: flex;
@@ -1153,6 +1297,18 @@ h3 {
     justify-self: end;
   }
 }
+
+/* ==================================================
+   ACCESSIBILITY — REDUCED MOTION
+   ==================================================
+
+   Some visitors prefer fewer animations because of motion
+   sensitivity or accessibility needs.
+
+   This media query respects the operating system's
+   prefers-reduced-motion setting by minimizing transitions
+   and disabling smooth scrolling.
+*/
 
 @media (prefers-reduced-motion: reduce) {
   html {
