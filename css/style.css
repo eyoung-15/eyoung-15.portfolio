@@ -9,9 +9,11 @@
   and responsive adjustments.
 */
 
-/* ==================================================
+
+
+
+/* 
    1. CSS VARIABLES
-   ==================================================
 
    CSS custom properties store reusable values.
 
@@ -20,7 +22,6 @@
 
    Variables are accessed using var(--variable-name).
 */
-
 :root {
   --color-background: #FFFDF7;
   --color-paper: #FFFFFF;
@@ -45,9 +46,9 @@
 }
 
 
-/* ==================================================
+
+/* 
    2. GLOBAL STYLES
-   ==================================================
 
    These rules establish the default appearance of HTML elements.
 
@@ -124,12 +125,10 @@ img {
   margin-inline: auto;
 }
 
-/* Header */
 
 
-/* ==================================================
+/*
    3. HEADER AND NAVIGATION
-   ==================================================
 
    The header is shared across all pages.
 
@@ -138,7 +137,6 @@ img {
 
    z-index ensures the header appears above page content.
 */
-
 .site-header {
   position: sticky;
   z-index: 100;
@@ -170,6 +168,7 @@ img {
   color: var(--color-white);
 }
 
+
 /*
   Desktop navigation uses Flexbox to arrange the links horizontally.
 
@@ -177,7 +176,6 @@ img {
   clamp() allows the spacing to adjust between a minimum and maximum
   value depending on the viewport width.
 */
-
 .site-nav {
   display: flex;
   align-items: center;
@@ -209,11 +207,11 @@ img {
   display: none;
 }
 
-/* Typography */
 
-/* ==================================================
+
+
+/*
    4. TYPOGRAPHY
-   ==================================================
 
    Shared text styles establish the visual hierarchy.
 
@@ -222,7 +220,6 @@ img {
 
    Letter-spacing is used to adjust the spacing between characters.
 */
-
 .eyebrow,
 .section-kicker,
 .project-type,
@@ -301,11 +298,10 @@ h3 {
   display: block;
 }
 
-/* Buttons and links */
 
-/* ==================================================
+
+/* 
    5. BUTTONS AND LINKS
-   ==================================================
 
    These styles are reused across the website.
 
@@ -314,7 +310,6 @@ h3 {
 
    Transitions create subtle hover effects.
 */
-
 .button {
   display: inline-flex;
   min-height: 47px;
@@ -370,7 +365,6 @@ h3 {
 }
 
 /* Home hero */
-
 .hero {
   display: grid;
   min-height: min(690px, calc(100svh - var(--header-height)));
@@ -477,7 +471,6 @@ h3 {
 }
 
 /* Introduction */
-
 .intro-section {
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
@@ -499,7 +492,6 @@ h3 {
 }
 
 /* Featured projects */
-
 .featured-work {
   padding-block: 5rem 6.5rem;
   border-top: 1px solid var(--color-line);
@@ -713,11 +705,6 @@ h3 {
 
 /* Capabilities */
 
-.capabilities-section {
-  padding-block: 5rem 6rem;
-  border-top: 1px solid var(--color-line);
-}
-
 /*
   The capabilities section uses CSS Grid to separate the heading
   from the list of interests.
@@ -725,6 +712,11 @@ h3 {
   Grid columns control the relative width of each area.
   The gap property creates space between the columns.
 */
+
+.capabilities-section {
+  padding-block: 5rem 6rem;
+  border-top: 1px solid var(--color-line);
+}
 
 .capabilities-layout {
   display: grid;
@@ -766,7 +758,6 @@ h3 {
 }
 
 /* Contact */
-
 .contact-section,
 .about-contact {
   padding-block: 2rem 6rem;
@@ -799,7 +790,6 @@ h3 {
 }
 
 /* Page headings */
-
 .page-hero {
   padding-block: 6rem 4rem;
   border-bottom: 1px solid var(--color-line);
@@ -822,7 +812,6 @@ h3 {
 }
 
 /* Work page */
-
 .work-list {
   padding-block: 1rem 5rem;
 }
@@ -847,7 +836,6 @@ h3 {
 
   The responsive stylesheet resets this order on smaller screens.
 */
-
 .case-study:nth-child(even) .case-study-visual {
   order: 2;
 }
@@ -895,7 +883,6 @@ h3 {
 }
 
 /* About page */
-
 .about-intro {
   display: grid;
   grid-template-columns: minmax(250px, 0.75fr) minmax(0, 1.25fr);
@@ -997,7 +984,6 @@ h3 {
 }
 
 /* Footer */
-
 .site-footer {
   background: var(--color-paper-alt);
 }
@@ -1031,11 +1017,11 @@ h3 {
   font-size: 0.72rem;
 }
 
-/* Subtle reveal animation */
 
-/* ==================================================
+
+/* 
    SCROLL REVEAL ANIMATION
-   ==================================================
+
 
    JavaScript adds the "reveal" class to selected elements
    when the page loads.
@@ -1047,7 +1033,6 @@ h3 {
 
    CSS transitions animate the change in opacity and position.
 */
-
 .reveal {
   opacity: 0;
   transform: translateY(12px);
@@ -1061,11 +1046,13 @@ h3 {
   transform: translateY(0);
 }
 
-/* Responsive */
+/* Responsiveness */
 
-/* ==================================================
+
+
+/* 
    RESPONSIVE LAYOUT — TABLET
-   ==================================================
+
 
    These rules adjust the layout when the viewport is 850px
    wide or narrower.
@@ -1073,7 +1060,6 @@ h3 {
    Grid layouts become simpler, spacing is reduced, and
    elements are rearranged to fit smaller screens.
 */
-
 @media (max-width: 850px) {
   :root {
     --header-height: 72px;
@@ -1120,9 +1106,8 @@ h3 {
   }
 }
 
-/* ==================================================
+/* 
    RESPONSIVE LAYOUT — MOBILE
-   ==================================================
 
    These rules apply at 640px and below.
 
@@ -1298,9 +1283,8 @@ h3 {
   }
 }
 
-/* ==================================================
+/* 
    ACCESSIBILITY — REDUCED MOTION
-   ==================================================
 
    Some visitors prefer fewer animations because of motion
    sensitivity or accessibility needs.
