@@ -137,15 +137,6 @@ img {
   color: var(--color-white);
 }
 
-.nav-contact {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.6rem 0.95rem;
-  border: 1px solid rgba(35, 9, 3, 0.35);
-  border-radius: 4px;
-}
-
 .nav-contact:hover {
   border-color: var(--color-white);
 }
