@@ -1,4 +1,3 @@
-
 // Wait until the HTML document has been fully parsed before running the code.
 // This ensures the navigation elements exist before JavaScript tries to select them.
 document.addEventListener("DOMContentLoaded", () => {
