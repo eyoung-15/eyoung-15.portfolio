@@ -1336,12 +1336,12 @@ h3 {
 
 .more-projects p {
   margin: 0;
-  color: var(--text-muted);
+  color: var(--color-muted);
   font-size: 0.95rem;
   line-height: 1.7;
 }
 
 .more-projects strong {
-  color: var(--text);
+  color: var(--color-ink);
   font-weight: 600;
 }
