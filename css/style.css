@@ -1053,12 +1053,6 @@ h3 {
     padding: 0.85rem 0;
   }
 
-  .nav-contact {
-    align-self: flex-start;
-    margin-top: 0.5rem;
-    padding: 0.6rem 0.9rem;
-  }
-
   .featured-work,
   .capabilities-section {
     padding-block: 4rem;
