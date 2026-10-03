@@ -1326,3 +1326,22 @@ h3 {
     padding-block: 2.5rem 3.5rem;
   }
 }
+
+
+.more-projects {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.more-projects p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.more-projects strong {
+  color: var(--text);
+  font-weight: 600;
+}
