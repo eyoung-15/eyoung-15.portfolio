@@ -63,7 +63,7 @@
   <h1>heritage<span class="accent-text">hub.</span></h1>
 
   <p class="project-detail-intro">
-    A full-stack web application for discovering museums, galleries, heritage sites, and other cultural places across Canada, with features for reviews, personal travel lists, and community contributions.
+    A full-stack web application that turns a large dataset of Canadian cultural facilities into an interactive way to discover, save, and review places.
   </p>
 
   <div class="project-meta">
@@ -89,6 +89,7 @@
     </div>
 
   </div>
+
 </section>
 
 <!-- Main project image -->
@@ -137,7 +138,7 @@
     </p>
 
     <p>
-      This led us to structure the application around three main activities: discovering places, learning more about individual facilities, and keeping track of places users had visited or wanted to visit.
+      From there, we focused the application around three main things: discovering places, learning more about them, and keeping track of places users had visited or wanted to visit.
     </p>
 
     <div class="project-gallery-placeholder">
@@ -158,7 +159,7 @@
     </p>
 
     <p>
-      This planning helped us separate public features from authenticated features and gave us a clearer structure for implementing protected routes and authorization later in development.
+      This also meant the backend needed to distinguish between public requests, authenticated member actions, and administrator actions. Planning these permissions early gave us a clearer structure for implementing protected routes and authorization later in development.
     </p>
 
     <div class="project-gallery-placeholder">
@@ -179,7 +180,7 @@
     </p>
 
     <p>
-      Reviews were structured to connect a user's rating and comment to a specific facility, along with the user's information and the time the review was posted.
+      Reviews were structured around a specific facility and user, with each review storing a rating, comment, timestamp, and optional image. This made it possible to retrieve reviews for individual facilities and calculate their average ratings.
     </p>
 
     <div class="project-gallery-placeholder">
@@ -196,7 +197,7 @@
     </p>
 
     <p>
-      The backend includes endpoints for registering and authenticating users, retrieving and managing facilities, creating and deleting reviews, and managing user-specific Bucket List and Travel Journal data.
+      I developed endpoints for registering and authenticating users, retrieving and managing facilities, creating and deleting reviews, and managing user-specific Bucket List and Travel Journal data.
     </p>
 
     <p>
@@ -231,7 +232,7 @@
 
   <article class="project-detail-section">
     <p class="eyebrow">07 / Features</p>
-    <h2>Building the user experience</h2>
+    <h2>Connecting features to the user experience</h2>
 
     <p>
       I developed the functioning features for the Travel Journal, Bucket List, Add Review, and Facility Details pages. These features connect the user's actions in the React interface to the backend and database.
@@ -288,7 +289,7 @@
     </p>
 
     <p>
-      The application successfully connects the React frontend to a Node.js and Express backend with MongoDB handling the application's persistent data. The final project demonstrates how the original dataset could be turned into an interactive application rather than simply presented as a static collection of information.
+      The project demonstrated that the original dataset could support much more than a searchable directory. By combining it with user accounts, reviews, images, saved locations, and an interactive map, we turned the data into an application people could actually use to plan and document their experiences.
     </p>
 
     <div class="project-gallery-placeholder">
@@ -325,15 +326,25 @@
     <p class="eyebrow">11 / Reflection</p>
     <h2>What I learned</h2>
 
-<p> HeritageHub gave me a much stronger understanding of full-stack development. I became more comfortable working with React on the frontend and Node.js, Express, and MongoDB on the backend, particularly with how data moves between each part of an application. </p>
+    <p>
+      HeritageHub gave me a much stronger understanding of full-stack development. I became more comfortable working with React on the frontend and Node.js, Express, and MongoDB on the backend, particularly with how data moves between each part of an application.
+    </p>
 
-<p> Working with MongoDB also taught me how much database structure can affect the rest of an application. Designing the User, Facility, and Review schemas made me think more carefully about how information should be organized, connected, and retrieved. </p>
+    <p>
+      Working with MongoDB also taught me how much database structure can affect the rest of an application. Designing the User, Facility, and Review schemas made me think more carefully about how information should be organized, connected, and retrieved.
+    </p>
 
-<p> I also gained a better understanding of authentication and security through implementing JWTs and the verifyToken middleware. Building features such as the Bucket List, Travel Journal, and reviews showed me that the backend needs to account for different user permissions and possible edge cases, not just the expected user flow. </p>
+    <p>
+      I also gained a better understanding of authentication and security through implementing JWTs and the verifyToken middleware. Building features such as the Bucket List, Travel Journal, and reviews showed me that the backend needs to account for different user permissions and possible edge cases, not just the expected user flow.
+    </p>
 
-<p> At the same time, the project strengthened my understanding of user interface and interaction design. While developing features, we constantly had to consider how someone would navigate the application, what information they would need, and what could make an interaction confusing or frustrating. </p>
+    <p>
+      At the same time, the project strengthened my understanding of user interface and interaction design. While developing features, we constantly had to consider how someone would navigate the application, what information they would need, and what could make an interaction confusing or frustrating.
+    </p>
 
-<p> One of my biggest takeaways was becoming more confident in connecting technical decisions with the overall user experience. HeritageHub showed me that a well-designed application needs both a thoughtful interface and a reliable foundation behind it. If we continued developing the project, I would be interested in improving features such as map marker clustering, password resetting, and the facility tagging system. </p>
+    <p>
+      One of my biggest takeaways was becoming more confident in connecting technical decisions with the overall user experience. HeritageHub showed me that the interface and the systems behind it have to work together for an application to feel reliable and easy to use. If we continued developing the project, I would be interested in improving features such as map marker clustering, password resetting, and the facility tagging system.
+    </p>
 
   </article>
 
