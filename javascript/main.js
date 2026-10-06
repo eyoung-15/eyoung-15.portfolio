@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Select the elements that should animate into view as the user scrolls.
   // querySelectorAll returns a collection of every matching element.
   const revealElements = document.querySelectorAll(
-    ".project-card, .capability, .case-study, .skill-group"
+    ".project-card, .capability, .case-study, .skill-group, .project-detail-section"
   );
 
   // Check whether the visitor has requested reduced motion in their
