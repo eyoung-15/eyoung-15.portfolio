@@ -1,224 +1,224 @@
 /*
-  Emily Youngward - Portfolio Stylesheet
+Emily Youngward - Portfolio Stylesheet
 
-  This stylesheet controls the appearance and layout of all three
-  portfolio pages: Home, Projects, and About.
+This stylesheet controls the appearance and layout of all three
+portfolio pages: Home, Projects, and About.
 
-  The styles are organized into sections for easier maintenance.
-  Shared styles are defined first, followed by page-specific styles
-  and responsive adjustments.
+The styles are organized into sections for easier maintenance.
+Shared styles are defined first, followed by page-specific styles
+and responsive adjustments.
 */
 
 
 
 
-/* 
-   1. CSS VARIABLES
 
-   CSS custom properties store reusable values.
+/*
+1. CSS VARIABLES
 
-   Using variables for colours, fonts, spacing, and transitions
-   makes it easier to maintain a consistent design across pages.
+CSS custom properties store reusable values.
 
-   Variables are accessed using var(--variable-name).
+Using variables for colours, fonts, spacing, and transitions
+makes it easier to maintain a consistent design across pages.
+
+Variables are accessed using var(--variable-name).
 */
 :root {
-  --color-background: #FFFDF7;
-  --color-paper: #FFFFFF;
-  --color-paper-alt: #F3EDF0;
-  --color-ink: #230903;
-  --color-muted: #665B58;
-  --color-muted-light: #8D8180;
-  --color-accent: #B592A0;
-  --color-accent-dark: #805C6B;
-  --color-accent-light: #E9DCE1;
-  --color-line: #E5D9D8;
-  --color-white: #FFFFFF;
+--color-background: #FFFDF7;
+--color-paper: #FFFFFF;
+--color-paper-alt: #F3EDF0;
+--color-ink: #230903;
+--color-muted: #665B58;
+--color-muted-light: #8D8180;
+--color-accent: #B592A0;
+--color-accent-dark: #805C6B;
+--color-accent-light: #E9DCE1;
+--color-line: #E5D9D8;
+--color-white: #FFFFFF;
 
-  --font-body: "Poppins", sans-serif;
+--font-body: "Poppins", sans-serif;
 
-  --content-width: 1180px;
-  --page-gutter: clamp(1.25rem, 5vw, 5rem);
-  --header-height: 78px;
+--content-width: 1180px;
+--page-gutter: clamp(1.25rem, 5vw, 5rem);
+--header-height: 78px;
 
-  --transition: 220ms ease;
-  --shadow-soft: 0 12px 35px rgba(35, 9, 3, 0.07);
+--transition: 220ms ease;
+--shadow-soft: 0 12px 35px rgba(35, 9, 3, 0.07);
 }
 
 
 
-/* 
-   2. GLOBAL STYLES
+/*
+2. GLOBAL STYLES
 
-   These rules establish the default appearance of HTML elements.
+These rules establish the default appearance of HTML elements.
 
-   The universal selector applies box-sizing to every element,
-   making width and height calculations more predictable.
+The universal selector applies box-sizing to every element,
+making width and height calculations more predictable.
 */
 * {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 1rem);
+scroll-behavior: smooth;
+scroll-padding-top: calc(var(--header-height) + 1rem);
 }
 
 body {
-  margin: 0;
-  background: var(--color-background);
-  color: var(--color-ink);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
+margin: 0;
+background: var(--color-background);
+color: var(--color-ink);
+font-family: var(--font-body);
+font-size: 1rem;
+line-height: 1.7;
+-webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+color: inherit;
+text-decoration: none;
 }
 
 button {
-  color: inherit;
-  font: inherit;
+color: inherit;
+font: inherit;
 }
 
 img {
-  display: block;
-  max-width: 100%;
+display: block;
+max-width: 100%;
 }
 
 ::selection {
-  color: var(--color-ink);
-  background: var(--color-accent-light);
+color: var(--color-ink);
+background: var(--color-accent-light);
 }
 
 .skip-link {
-  position: absolute;
-  z-index: 1000;
-  top: 0.75rem;
-  left: 0.75rem;
-  padding: 0.65rem 1rem;
-  transform: translateY(-150%);
-  border-radius: 4px;
-  background: var(--color-ink);
-  color: var(--color-white);
+position: absolute;
+z-index: 1000;
+top: 0.75rem;
+left: 0.75rem;
+padding: 0.65rem 1rem;
+transform: translateY(-150%);
+border-radius: 4px;
+background: var(--color-ink);
+color: var(--color-white);
 }
 
 .skip-link:focus {
-  transform: translateY(0);
+transform: translateY(0);
 }
 
-
 /*
-  Shared content container.
+Shared content container.
 
-  The min() function prevents the container from exceeding
-  the maximum content width while maintaining responsive
-  spacing on smaller screens.
+The min() function prevents the container from exceeding
+the maximum content width while maintaining responsive
+spacing on smaller screens.
 
-  margin-inline: auto centres the container horizontally.
+margin-inline: auto centres the container horizontally.
 */
 .section-shell {
-  width: min(100% - (var(--page-gutter) * 2), var(--content-width));
-  margin-inline: auto;
+width: min(100% - (var(--page-gutter) * 2), var(--content-width));
+margin-inline: auto;
 }
 
 
 
 /*
-   3. HEADER AND NAVIGATION
+3. HEADER AND NAVIGATION
 
-   The header is shared across all pages.
+The header is shared across all pages.
 
-   position: sticky keeps it at the top of the viewport
-   while scrolling, without removing it from the document flow.
+position: sticky keeps it at the top of the viewport
+while scrolling, without removing it from the document flow.
 
-   z-index ensures the header appears above page content.
+z-index ensures the header appears above page content.
 */
 .site-header {
-  position: sticky;
-  z-index: 100;
-  top: 0;
-  height: var(--header-height);
-  border-bottom: 1px solid rgba(35, 9, 3, 0.08);
-  background: rgba(181, 146, 160, 0.96);
-  backdrop-filter: blur(10px);
+position: sticky;
+z-index: 100;
+top: 0;
+height: var(--header-height);
+border-bottom: 1px solid rgba(35, 9, 3, 0.08);
+background: rgba(181, 146, 160, 0.96);
+backdrop-filter: blur(10px);
 }
 
 .header-inner {
-  display: flex;
-  width: min(100% - (var(--page-gutter) * 2), var(--content-width));
-  height: 100%;
-  margin-inline: auto;
-  align-items: center;
-  justify-content: space-between;
+display: flex;
+width: min(100% - (var(--page-gutter) * 2), var(--content-width));
+height: 100%;
+margin-inline: auto;
+align-items: center;
+justify-content: space-between;
 }
 
 .wordmark,
 .footer-wordmark {
-  font-size: 1.08rem;
-  font-weight: 600;
-  letter-spacing: -0.04em;
+font-size: 1.08rem;
+font-weight: 600;
+letter-spacing: -0.04em;
 }
 
 .wordmark span,
 .footer-wordmark span {
-  color: var(--color-white);
+color: var(--color-white);
 }
 
-
 /*
-  Desktop navigation uses Flexbox to arrange the links horizontally.
+Desktop navigation uses Flexbox to arrange the links horizontally.
 
-  The gap property controls the spacing between navigation items.
-  clamp() allows the spacing to adjust between a minimum and maximum
-  value depending on the viewport width.
+The gap property controls the spacing between navigation items.
+clamp() allows the spacing to adjust between a minimum and maximum
+value depending on the viewport width.
 */
 .site-nav {
-  display: flex;
-  align-items: center;
-  gap: clamp(1.2rem, 3vw, 2.5rem);
+display: flex;
+align-items: center;
+gap: clamp(1.2rem, 3vw, 2.5rem);
 }
 
 .nav-link,
 .nav-contact {
-  font-size: 0.88rem;
-  font-weight: 500;
-  transition: color var(--transition);
+font-size: 0.88rem;
+font-weight: 500;
+transition: color var(--transition);
 }
 
 .nav-link {
-  color: rgba(35, 9, 3, 0.72);
+color: rgba(35, 9, 3, 0.72);
 }
 
 .nav-link:hover,
 .nav-link.active,
 .nav-contact:hover {
-  color: var(--color-white);
+color: var(--color-white);
 }
 
 .nav-contact:hover {
-  border-color: var(--color-white);
+border-color: var(--color-white);
 }
 
 .menu-toggle {
-  display: none;
+display: none;
 }
+
 
 
 
 
 /*
-   4. TYPOGRAPHY
+4. TYPOGRAPHY
 
-   Shared text styles establish the visual hierarchy.
+Shared text styles establish the visual hierarchy.
 
-   clamp() creates fluid font sizes that adjust with viewport width
-   while respecting minimum and maximum sizes.
+clamp() creates fluid font sizes that adjust with viewport width
+while respecting minimum and maximum sizes.
 
-   Letter-spacing is used to adjust the spacing between characters.
+Letter-spacing is used to adjust the spacing between characters.
 */
 .eyebrow,
 .section-kicker,
@@ -227,779 +227,778 @@ img {
 .capability-number,
 .education-location,
 .footer-year {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.07em;
-  line-height: 1.5;
-  text-transform: uppercase;
+font-size: 0.72rem;
+font-weight: 500;
+letter-spacing: 0.07em;
+line-height: 1.5;
+text-transform: uppercase;
 }
 
 .eyebrow {
-  margin: 0 0 1.25rem;
-  color: var(--color-accent-dark);
+margin: 0 0 1.25rem;
+color: var(--color-accent-dark);
 }
 
 .section-kicker {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.3rem;
-  color: var(--color-muted-light);
+display: flex;
+align-items: center;
+gap: 0.8rem;
+margin-bottom: 1.3rem;
+color: var(--color-muted-light);
 }
 
 .section-kicker::before {
-  display: block;
-  width: 25px;
-  height: 1px;
-  background: var(--color-accent);
-  content: "";
+display: block;
+width: 25px;
+height: 1px;
+background: var(--color-accent);
+content: "";
 }
 
 .section-label {
-  color: var(--color-muted);
+color: var(--color-muted);
 }
 
 h1,
 h2,
 h3,
 p {
-  margin-top: 0;
+margin-top: 0;
 }
 
 h1,
 h2,
 h3 {
-  color: var(--color-ink);
-  font-weight: 600;
-  line-height: 1.2;
+color: var(--color-ink);
+font-weight: 600;
+line-height: 1.2;
 }
 
 h1 {
-  font-size: clamp(2.8rem, 6.5vw, 5.6rem);
-  letter-spacing: -0.065em;
+font-size: clamp(2.8rem, 6.5vw, 5.6rem);
+letter-spacing: -0.065em;
 }
 
 h2 {
-  font-size: clamp(1.9rem, 4vw, 3.2rem);
-  letter-spacing: -0.055em;
+font-size: clamp(1.9rem, 4vw, 3.2rem);
+letter-spacing: -0.055em;
 }
 
 h3 {
-  font-size: 1.2rem;
-  letter-spacing: -0.035em;
+font-size: 1.2rem;
+letter-spacing: -0.035em;
 }
 
 .accent-text {
-  color: var(--color-accent-dark);
+color: var(--color-accent-dark);
 }
 
 
 
-/* 
-   5. BUTTONS AND LINKS
+/*
+5. BUTTONS AND LINKS
 
-   These styles are reused across the website.
+These styles are reused across the website.
 
-   Inline-flex allows button text and decorative arrows to sit
-   together while supporting alignment and spacing.
+Inline-flex allows button text and decorative arrows to sit
+together while supporting alignment and spacing.
 
-   Transitions create subtle hover effects.
+Transitions create subtle hover effects.
 */
 .button {
-  display: inline-flex;
-  min-height: 47px;
-  align-items: center;
-  justify-content: center;
-  gap: 0.9rem;
-  padding: 0.75rem 1.15rem;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  font-size: 0.88rem;
-  font-weight: 500;
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    color var(--transition),
-    transform var(--transition);
+display: inline-flex;
+min-height: 47px;
+align-items: center;
+justify-content: center;
+gap: 0.9rem;
+padding: 0.75rem 1.15rem;
+border: 1px solid transparent;
+border-radius: 4px;
+font-size: 0.88rem;
+font-weight: 500;
+transition:
+background var(--transition),
+border-color var(--transition),
+color var(--transition),
+transform var(--transition);
 }
 
 .button:hover {
-  transform: translateY(-2px);
+transform: translateY(-2px);
 }
 
 .button-primary {
-  background: var(--color-accent-dark);
-  color: var(--color-white);
+background: var(--color-accent-dark);
+color: var(--color-white);
 }
 
 .button-primary:hover {
-  background: var(--color-ink);
+background: var(--color-ink);
 }
 
 .button-light {
-  background: var(--color-paper);
-  color: var(--color-ink);
+background: var(--color-paper);
+color: var(--color-ink);
 }
 
 .button-light:hover {
-  background: var(--color-accent-light);
+background: var(--color-accent-light);
 }
 
 .text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  color: var(--color-ink);
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color var(--transition);
+display: inline-flex;
+align-items: center;
+gap: 0.55rem;
+color: var(--color-ink);
+font-size: 0.9rem;
+font-weight: 500;
+transition: color var(--transition);
 }
 
 .text-link:hover {
-  color: var(--color-accent-dark);
+color: var(--color-accent-dark);
 }
 
 /* Home hero */
 .hero-copy {
-  position: relative;
-  z-index: 1;
+position: relative;
+z-index: 1;
 }
 
 .hero-description {
-  max-width: 560px;
-  margin-bottom: 1.8rem;
-  color: var(--color-muted);
-  font-size: 1.02rem;
-  line-height: 1.8;
+max-width: 560px;
+margin-bottom: 1.8rem;
+color: var(--color-muted);
+font-size: 1.02rem;
+line-height: 1.8;
 }
 
 .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1.35rem;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 1.35rem;
 }
 
 /* Introduction */
 .intro-content h2 {
-  max-width: 800px;
-  margin-bottom: 1.3rem;
+max-width: 800px;
+margin-bottom: 1.3rem;
 }
 
 .intro-content p {
-  max-width: 680px;
-  margin-bottom: 0;
-  color: var(--color-muted);
-  font-size: 1rem;
+max-width: 680px;
+margin-bottom: 0;
+color: var(--color-muted);
+font-size: 1rem;
 }
 
 /* Featured projects */
 .featured-work {
-  padding-block: 5rem 6.5rem;
-  border-top: 1px solid var(--color-line);
+padding-block: 5rem 6.5rem;
+border-top: 1px solid var(--color-line);
 }
 
 .section-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-bottom: 2.3rem;
+display: flex;
+align-items: end;
+justify-content: space-between;
+gap: 2rem;
+margin-bottom: 2.3rem;
 }
 
 .section-heading h2 {
-  max-width: 700px;
-  margin-bottom: 0;
+max-width: 700px;
+margin-bottom: 0;
 }
 
 .section-heading-link {
-  flex: 0 0 auto;
-  margin-bottom: 0.35rem;
+flex: 0 0 auto;
+margin-bottom: 0.35rem;
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.4rem 1.5rem;
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 2.4rem 1.5rem;
 }
 
 .project-card-large {
-  grid-column: 1 / -1;
+grid-column: 1 / -1;
 }
 
 .project-visual {
-  position: relative;
-  display: flex;
-  min-height: 270px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  isolation: isolate;
-  transition: transform var(--transition), box-shadow var(--transition);
+position: relative;
+display: flex;
+min-height: 270px;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+isolation: isolate;
+transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .project-card-large .project-visual {
-  min-height: clamp(320px, 40vw, 470px);
+min-height: clamp(320px, 40vw, 470px);
 }
 
 .project-visual:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(70, 55, 65, 0.12);
+transform: translateY(-6px);
+box-shadow: 0 12px 24px rgba(70, 55, 65, 0.12);
 }
 
 .project-visual:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 4px;
+outline: 2px solid var(--color-accent);
+outline-offset: 4px;
 }
 
 .project-visual-mauve {
-  background: #DCCBD1;
+background: #DCCBD1;
 }
 
 .project-visual-cream {
-  background: #F0E8DF;
+background: #F0E8DF;
 }
 
 .project-visual-rose {
-  background: #E8D9DE;
+background: #E8D9DE;
 }
 
 .project-placeholder-label {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 3;
-  color: rgba(35, 9, 3, 0.62);
-  font-size: 0.62rem;
+position: absolute;
+right: 1rem;
+bottom: 1rem;
+z-index: 3;
+color: rgba(35, 9, 3, 0.62);
+font-size: 0.62rem;
 }
 
 .placeholder-window,
 .placeholder-browser {
-  position: relative;
-  display: block;
-  width: 57%;
-  min-height: 185px;
-  overflow: hidden;
-  border: 1px solid rgba(35, 9, 3, 0.14);
-  border-radius: 5px;
-  background: rgba(255, 253, 247, 0.8);
-  box-shadow: var(--shadow-soft);
-  transform: rotate(-3deg);
+position: relative;
+display: block;
+width: 57%;
+min-height: 185px;
+overflow: hidden;
+border: 1px solid rgba(35, 9, 3, 0.14);
+border-radius: 5px;
+background: rgba(255, 253, 247, 0.8);
+box-shadow: var(--shadow-soft);
+transform: rotate(-3deg);
 }
 
 .placeholder-window-large {
-  width: 65%;
-  min-height: 250px;
+width: 65%;
+min-height: 250px;
 }
 
 .placeholder-window-bar {
-  display: block;
-  height: 22px;
-  border-bottom: 1px solid rgba(35, 9, 3, 0.1);
-  background: rgba(181, 146, 160, 0.35);
+display: block;
+height: 22px;
+border-bottom: 1px solid rgba(35, 9, 3, 0.1);
+background: rgba(181, 146, 160, 0.35);
 }
 
 .placeholder-window-line {
-  display: block;
-  width: 62%;
-  height: 7px;
-  margin: 22px 0 0 10%;
-  border-radius: 5px;
-  background: rgba(128, 92, 107, 0.3);
+display: block;
+width: 62%;
+height: 7px;
+margin: 22px 0 0 10%;
+border-radius: 5px;
+background: rgba(128, 92, 107, 0.3);
 }
 
 .placeholder-window-line.short {
-  width: 38%;
-  margin-top: 10px;
+width: 38%;
+margin-top: 10px;
 }
 
 .placeholder-window-block {
-  display: block;
-  width: 80%;
-  height: 85px;
-  margin: 22px auto 0;
-  border-radius: 3px;
-  background: rgba(181, 146, 160, 0.35);
+display: block;
+width: 80%;
+height: 85px;
+margin: 22px auto 0;
+border-radius: 3px;
+background: rgba(181, 146, 160, 0.35);
 }
 
 .placeholder-browser {
-  width: 70%;
-  min-height: 190px;
-  transform: rotate(2deg);
+width: 70%;
+min-height: 190px;
+transform: rotate(2deg);
 }
 
 .placeholder-browser-content {
-  display: grid;
-  min-height: 168px;
-  grid-template-columns: 0.32fr 0.68fr;
-  gap: 9px;
-  padding: 12px;
+display: grid;
+min-height: 168px;
+grid-template-columns: 0.32fr 0.68fr;
+gap: 9px;
+padding: 12px;
 }
 
 .placeholder-browser-sidebar {
-  background: rgba(181, 146, 160, 0.4);
+background: rgba(181, 146, 160, 0.4);
 }
 
 .placeholder-browser-main {
-  background: rgba(128, 92, 107, 0.13);
+background: rgba(128, 92, 107, 0.13);
 }
 
 .placeholder-art {
-  position: relative;
-  width: 65%;
-  height: 190px;
+position: relative;
+width: 65%;
+height: 190px;
 }
 
 .placeholder-art-circle {
-  position: absolute;
-  top: 5%;
-  left: 15%;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: rgba(181, 146, 160, 0.75);
+position: absolute;
+top: 5%;
+left: 15%;
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background: rgba(181, 146, 160, 0.75);
 }
 
 .placeholder-art-square {
-  position: absolute;
-  top: 28%;
-  right: 12%;
-  width: 105px;
-  height: 105px;
-  border: 1px solid rgba(35, 9, 3, 0.25);
-  background: rgba(255, 253, 247, 0.55);
-  transform: rotate(12deg);
+position: absolute;
+top: 28%;
+right: 12%;
+width: 105px;
+height: 105px;
+border: 1px solid rgba(35, 9, 3, 0.25);
+background: rgba(255, 253, 247, 0.55);
+transform: rotate(12deg);
 }
 
 .placeholder-art-line {
-  position: absolute;
-  bottom: 7%;
-  left: 2%;
-  width: 85%;
-  height: 1px;
-  background: rgba(35, 9, 3, 0.3);
-  transform: rotate(-12deg);
+position: absolute;
+bottom: 7%;
+left: 2%;
+width: 85%;
+height: 1px;
+background: rgba(35, 9, 3, 0.3);
+transform: rotate(-12deg);
 }
 
 .project-info {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-top: 1.15rem;
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+gap: 1rem;
+padding-top: 1.15rem;
 }
 
 .project-type {
-  margin-bottom: 0.45rem;
-  color: var(--color-accent-dark);
-  font-size: 0.65rem;
+margin-bottom: 0.45rem;
+color: var(--color-accent-dark);
+font-size: 0.65rem;
 }
 
 .project-info h3 {
-  margin-bottom: 0.4rem;
+margin-bottom: 0.4rem;
 }
 
 .project-info h3 a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.2s ease;
+color: inherit;
+text-decoration: none;
+transition: color 0.2s ease;
 }
 
 .project-info h3 a:hover {
-  color: var(--color-accent);
+color: var(--color-accent);
 }
 
 .project-info h3 a:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 4px;
+outline: 2px solid var(--color-accent);
+outline-offset: 4px;
 }
 
 .project-summary {
-  max-width: 540px;
-  margin-bottom: 0;
-  color: var(--color-muted);
-  font-size: 0.92rem;
+max-width: 540px;
+margin-bottom: 0;
+color: var(--color-muted);
+font-size: 0.92rem;
 }
 
 .project-arrow {
-  color: var(--color-accent-dark);
-  font-size: 1.25rem;
-  transition: color var(--transition), transform var(--transition);
+color: var(--color-accent-dark);
+font-size: 1.25rem;
+transition: color var(--transition), transform var(--transition);
 }
 
 .project-arrow:hover {
-  color: var(--color-accent);
-  transform: translate(3px, -3px);
+color: var(--color-accent);
+transform: translate(3px, -3px);
 }
 
 .project-arrow:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 4px;
+outline: 2px solid var(--color-accent);
+outline-offset: 4px;
 }
 
 /* Capabilities */
 
 /*
-  The capabilities section uses CSS Grid to separate the heading
-  from the list of interests.
+The capabilities section uses CSS Grid to separate the heading
+from the list of interests.
 
-  Grid columns control the relative width of each area.
-  The gap property creates space between the columns.
+Grid columns control the relative width of each area.
+The gap property creates space between the columns.
 */
 
 .capabilities-section {
-  padding-block: 5rem 6rem;
-  border-top: 1px solid var(--color-line);
+padding-block: 5rem 6rem;
+border-top: 1px solid var(--color-line);
 }
 
 .capabilities-layout {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: clamp(2rem, 8vw, 8rem);
+display: grid;
+grid-template-columns: 0.85fr 1.15fr;
+gap: clamp(2rem, 8vw, 8rem);
 }
 
 .capabilities-layout h2 {
-  margin-bottom: 0;
+margin-bottom: 0;
 }
 
 .capability-list {
-  border-top: 1px solid var(--color-line);
+border-top: 1px solid var(--color-line);
 }
 
 .capability {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 1rem;
-  padding: 1.4rem 0;
-  border-bottom: 1px solid var(--color-line);
+display: grid;
+grid-template-columns: 40px 1fr;
+gap: 1rem;
+padding: 1.4rem 0;
+border-bottom: 1px solid var(--color-line);
 }
 
 .capability-number {
-  padding-top: 0.25rem;
-  color: var(--color-accent-dark);
+padding-top: 0.25rem;
+color: var(--color-accent-dark);
 }
 
 .capability h3 {
-  margin-bottom: 0.4rem;
-  font-size: 1.08rem;
+margin-bottom: 0.4rem;
+font-size: 1.08rem;
 }
 
 .capability p {
-  max-width: 500px;
-  margin-bottom: 0;
-  color: var(--color-muted);
-  font-size: 0.92rem;
+max-width: 500px;
+margin-bottom: 0;
+color: var(--color-muted);
+font-size: 0.92rem;
 }
 
 /* Contact */
 .contact-section{
-  padding-block: 2rem 6rem;
+padding-block: 2rem 6rem;
 }
 
 .contact-panel {
-  padding: clamp(2rem, 6vw, 4.5rem);
-  background: var(--color-accent-dark);
-  color: var(--color-white);
+padding: clamp(2rem, 6vw, 4.5rem);
+background: var(--color-accent-dark);
+color: var(--color-white);
 }
 
 .contact-panel .eyebrow,
 .contact-panel h2,
 .contact-panel p {
-  color: var(--color-white);
+color: var(--color-white);
 }
 
 .contact-panel .eyebrow {
-  opacity: 0.85;
+opacity: 0.85;
 }
 
 .contact-panel h2 {
-  max-width: 700px;
-  margin-bottom: 1rem;
+max-width: 700px;
+margin-bottom: 1rem;
 }
 
 .contact-panel p:not(.eyebrow) {
-  margin-bottom: 1.5rem;
-  opacity: 0.85;
+margin-bottom: 1.5rem;
+opacity: 0.85;
 }
 
 /* Page headings */
 .page-hero {
-  padding-block: 6rem 4rem;
-  border-bottom: 1px solid var(--color-line);
+padding-block: 6rem 4rem;
+border-bottom: 1px solid var(--color-line);
 }
 
 .page-hero h1 {
-  max-width: 1000px;
-  margin-bottom: 1.3rem;
+max-width: 1000px;
+margin-bottom: 1.3rem;
 }
 
 .page-hero-description {
-  max-width: 680px;
-  margin-bottom: 0;
-  color: var(--color-muted);
-  font-size: 1rem;
+max-width: 680px;
+margin-bottom: 0;
+color: var(--color-muted);
+font-size: 1rem;
 }
 
 .about-page-hero {
-  padding-bottom: 3.8rem;
+padding-bottom: 3.8rem;
 }
 
 /* Work page */
 .work-list {
-  padding-block: 1rem 5rem;
+padding-block: 1rem 5rem;
 }
 
 .case-study {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(2rem, 6vw, 5rem);
-  align-items: center;
-  padding-block: 3.5rem;
-  border-bottom: 1px solid var(--color-line);
+display: grid;
+grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+gap: clamp(2rem, 6vw, 5rem);
+align-items: center;
+padding-block: 3.5rem;
+border-bottom: 1px solid var(--color-line);
 }
 
 
 
 /*
-  Alternating project layout.
+Alternating project layout.
 
-  nth-child(even) selects every second case study.
-  Changing the visual's order creates an alternating image/text
-  arrangement on wider screens.
+nth-child(even) selects every second case study.
+Changing the visual's order creates an alternating image/text
+arrangement on wider screens.
 
-  The responsive stylesheet resets this order on smaller screens.
+The responsive stylesheet resets this order on smaller screens.
 */
 .case-study:nth-child(even) .case-study-visual {
-  order: 2;
+order: 2;
 }
 
 .case-study-visual {
-  position: relative;
-  display: grid;
-  min-height: 350px;
-  place-items: center;
-  overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
+position: relative;
+display: grid;
+min-height: 350px;
+place-items: center;
+overflow: hidden;
+transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .case-study-visual:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(70, 55, 65, 0.12);
+transform: translateY(-6px);
+box-shadow: 0 12px 24px rgba(70, 55, 65, 0.12);
 }
 
 .case-study-visual:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 4px;
+outline: 2px solid var(--color-accent);
+outline-offset: 4px;
 }
 
 .case-study-content h2 {
-  margin-bottom: 1rem;
-  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+margin-bottom: 1rem;
+font-size: clamp(1.9rem, 3.5vw, 2.8rem);
 }
 
 .case-study-content > p {
-  color: var(--color-muted);
+color: var(--color-muted);
 }
 
 .case-study-content h2 a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.2s ease;
+color: inherit;
+text-decoration: none;
+transition: color 0.2s ease;
 }
 
 .case-study-content h2 a:hover {
-  color: var(--color-accent);
+color: var(--color-accent);
 }
 
 .case-study-content h2 a:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 4px;
+outline: 2px solid var(--color-accent);
+outline-offset: 4px;
 }
 
 .project-type {
-  margin-bottom: 0.65rem;
+margin-bottom: 0.65rem;
 }
 
 .tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-block: 1.2rem;
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+margin-block: 1.2rem;
 }
 
 .tag-list span {
-  padding: 0.35rem 0.65rem;
-  border: 1px solid var(--color-line);
-  border-radius: 3px;
-  color: var(--color-muted);
-  font-size: 0.72rem;
+padding: 0.35rem 0.65rem;
+border: 1px solid var(--color-line);
+border-radius: 3px;
+color: var(--color-muted);
+font-size: 0.72rem;
 }
 
 .case-study-note {
-  margin-bottom: 0;
-  color: var(--color-accent-dark) !important;
-  font-size: 0.85rem;
+margin-bottom: 0;
+color: var(--color-accent-dark) !important;
+font-size: 0.85rem;
 }
 
 /* About page */
 .about-intro {
-  display: grid;
-  grid-template-columns: minmax(250px, 0.75fr) minmax(0, 1.25fr);
-  align-items: center;
-  gap: clamp(2rem, 7vw, 6rem);
-  padding-block: 5rem 6rem;
-  border-bottom: 1px solid var(--color-line);
+display: grid;
+grid-template-columns: minmax(250px, 0.75fr) minmax(0, 1.25fr);
+align-items: center;
+gap: clamp(2rem, 7vw, 6rem);
+padding-block: 5rem 6rem;
+border-bottom: 1px solid var(--color-line);
 }
 
 .about-photo-placeholder {
-  display: grid;
-  min-height: 380px;
-  place-items: center;
-  background: var(--color-accent-light);
-  color: var(--color-muted);
-  text-align: center;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  line-height: 1.8;
-  text-transform: uppercase;
+display: grid;
+min-height: 380px;
+place-items: center;
+background: var(--color-accent-light);
+color: var(--color-muted);
+text-align: center;
+font-size: 0.72rem;
+font-weight: 500;
+letter-spacing: 0.08em;
+line-height: 1.8;
+text-transform: uppercase;
 }
 
 .about-intro-copy p:not(.eyebrow) {
-  max-width: 650px;
-  color: var(--color-muted);
+max-width: 650px;
+color: var(--color-muted);
 }
 
 .education-section,
 .skills-section {
-  padding-block: 5rem;
-  border-bottom: 1px solid var(--color-line);
+padding-block: 5rem;
+border-bottom: 1px solid var(--color-line);
 }
 
 .education-card {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 1.7rem;
-  border: 1px solid var(--color-line);
-  background: rgba(255, 255, 255, 0.55);
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+gap: 2rem;
+padding: 1.7rem;
+border: 1px solid var(--color-line);
+background: rgba(255, 255, 255, 0.55);
 }
 
 .education-card h2 {
-  margin-bottom: 0.45rem;
-  font-size: 1.55rem;
+margin-bottom: 0.45rem;
+font-size: 1.55rem;
 }
 
 .education-degree {
-  margin-bottom: 0.35rem;
-  color: var(--color-muted);
+margin-bottom: 0.35rem;
+color: var(--color-muted);
 }
 
 .education-detail {
-  margin-bottom: 0;
-  color: var(--color-muted-light);
-  font-size: 0.9rem;
+margin-bottom: 0;
+color: var(--color-muted-light);
+font-size: 0.9rem;
 }
 
 .education-location {
-  flex: 0 0 auto;
-  padding-top: 0.25rem;
-  color: var(--color-muted-light);
+flex: 0 0 auto;
+padding-top: 0.25rem;
+color: var(--color-muted-light);
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  border: 1px solid var(--color-line);
-  background: var(--color-line);
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 1px;
+border: 1px solid var(--color-line);
+background: var(--color-line);
 }
 
 .skill-group {
-  padding: 1.6rem;
-  background: var(--color-background);
+padding: 1.6rem;
+background: var(--color-background);
 }
 
 .skill-group h3 {
-  margin-bottom: 1rem;
-  font-size: 1.08rem;
+margin-bottom: 1rem;
+font-size: 1.08rem;
 }
 
 .skill-group ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+margin: 0;
+padding: 0;
+list-style: none;
 }
 
 .skill-group li {
-  padding: 0.35rem 0.65rem;
-  border: 1px solid var(--color-line);
-  color: var(--color-muted);
-  font-size: 0.82rem;
+padding: 0.35rem 0.65rem;
+border: 1px solid var(--color-line);
+color: var(--color-muted);
+font-size: 0.82rem;
 }
 
 /* Footer */
 .site-footer {
-  background: var(--color-paper-alt);
+background: var(--color-paper-alt);
 }
 
 .footer-inner {
-  display: flex;
-  width: min(100% - (var(--page-gutter) * 2), var(--content-width));
-  min-height: 105px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-inline: auto;
+display: flex;
+width: min(100% - (var(--page-gutter) * 2), var(--content-width));
+min-height: 105px;
+align-items: center;
+justify-content: space-between;
+gap: 2rem;
+margin-inline: auto;
 }
 
 .footer-links {
-  display: flex;
-  gap: 1.2rem;
+display: flex;
+gap: 1.2rem;
 }
 
 .footer-links a,
 .footer-year {
-  color: var(--color-muted);
-  font-size: 0.8rem;
+color: var(--color-muted);
+font-size: 0.8rem;
 }
 
 .footer-links a:hover {
-  color: var(--color-accent-dark);
+color: var(--color-accent-dark);
 }
 
 .footer-year {
-  font-size: 0.72rem;
+font-size: 0.72rem;
 }
 
 
 
-/* 
-   SCROLL REVEAL ANIMATION
+/*
+SCROLL REVEAL ANIMATION
 
+JavaScript adds the "reveal" class to selected elements
+and adds "visible" when they enter the viewport.
 
-  JavaScript adds the "reveal" class to selected elements
-  and adds "visible" when they enter the viewport.
+Elements begin slightly transparent and shifted downward.
 
-  Elements begin slightly transparent and shifted downward.
-
-   CSS transitions animate the change in opacity and position.
+CSS transitions animate the change in opacity and position.
 */
 .reveal {
-  opacity: 0;
-  transform: translateY(12px);
-  transition:
-    opacity 450ms ease,
-    transform 450ms ease;
+opacity: 0;
+transform: translateY(12px);
+transition:
+opacity 450ms ease,
+transform 450ms ease;
 }
 
 .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+opacity: 1;
+transform: translateY(0);
 }
 
 
@@ -1008,220 +1007,220 @@ h3 {
 
 
 
-/* 
-   RESPONSIVE LAYOUT — TABLET
+/*
+RESPONSIVE LAYOUT — TABLET
 
+These rules adjust the layout when the viewport is 850px
+wide or narrower.
 
-   These rules adjust the layout when the viewport is 850px
-   wide or narrower.
-
-   Grid layouts become simpler, spacing is reduced, and
-   elements are rearranged to fit smaller screens.
+Grid layouts become simpler, spacing is reduced, and
+elements are rearranged to fit smaller screens.
 */
 @media (max-width: 850px) {
-  :root {
-    --header-height: 72px;
-  }
-
-  .capabilities-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .case-study {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
-  }
-
-  .case-study:nth-child(even) .case-study-visual {
-    order: initial;
-  }
-
-  .case-study-visual {
-    min-height: 320px;
-  }
-
-  .footer-inner {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-block: 1.5rem;
-  }
+:root {
+--header-height: 72px;
 }
 
-/* 
-   RESPONSIVE LAYOUT — MOBILE
+.capabilities-layout {
+grid-template-columns: 1fr;
+gap: 2rem;
+}
 
-   These rules apply at 640px and below.
+.case-study {
+grid-template-columns: 1fr;
+gap: 1.8rem;
+}
 
-   The desktop navigation is replaced with a collapsible menu.
-   Multi-column layouts become single-column layouts.
-   Spacing and typography are adjusted for smaller screens.
+.case-study:nth-child(even) .case-study-visual {
+order: initial;
+}
+
+.case-study-visual {
+min-height: 320px;
+}
+
+.footer-inner {
+flex-wrap: wrap;
+justify-content: space-between;
+padding-block: 1.5rem;
+}
+}
+
+/*
+RESPONSIVE LAYOUT — MOBILE
+
+These rules apply at 640px and below.
+
+The desktop navigation is replaced with a collapsible menu.
+Multi-column layouts become single-column layouts.
+Spacing and typography are adjusted for smaller screens.
 */
 @media (max-width: 640px) {
-  .menu-toggle {
-    display: flex;
-    width: 42px;
-    height: 42px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    border: 1px solid rgba(35, 9, 3, 0.35);
-    border-radius: 4px;
-    background: transparent;
-    cursor: pointer;
-  }
-
-  .menu-toggle span {
-    display: block;
-    width: 17px;
-    height: 1px;
-    background: var(--color-ink);
-    transition: transform var(--transition);
-  }
-
-  .menu-toggle[aria-expanded="true"] span:first-child {
-    transform: translateY(3.5px) rotate(45deg);
-  }
-
-  .menu-toggle[aria-expanded="true"] span:last-child {
-    transform: translateY(-3.5px) rotate(-45deg);
-  }
-
-  .site-nav {
-    position: absolute;
-    top: var(--header-height);
-    right: 0;
-    left: 0;
-    display: none;
-    align-items: stretch;
-    gap: 0;
-    padding: 0.75rem var(--page-gutter) 1.25rem;
-    border-bottom: 1px solid var(--color-line);
-    background: var(--color-background);
-  }
-
-  .site-nav.open {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav-link,
-  .nav-contact {
-    padding: 0.85rem 0;
-  }
-
-  .featured-work,
-  .capabilities-section {
-    padding-block: 4rem;
-  }
-
-  .section-heading {
-    display: block;
-  }
-
-  .section-heading-link {
-    margin-top: 1.2rem;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .project-card-large {
-    grid-column: auto;
-  }
-
-  .project-visual,
-  .project-card-large .project-visual {
-    min-height: 280px;
-  }
-
-  .page-hero {
-    padding-block: 4rem 3rem;
-  }
-
-  .page-hero h1 {
-    font-size: clamp(2.7rem, 12vw, 4rem);
-  }
-
-  .about-intro {
-    grid-template-columns: 1fr;
-    padding-block: 3.5rem;
-  }
-
-  .about-photo-placeholder {
-    min-height: 290px;
-  }
-
-  .education-card {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.25rem;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skill-group {
-    padding: 1.3rem;
-  }
-
-  .contact-section{
-    padding-bottom: 4rem;
-  }
-
-  .contact-panel {
-    padding: 2rem 1.4rem;
-  }
-
-  .footer-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-  }
-
-  .footer-links {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-
-  .footer-year {
-    justify-self: end;
-  }
+.menu-toggle {
+display: flex;
+width: 42px;
+height: 42px;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 6px;
+border: 1px solid rgba(35, 9, 3, 0.35);
+border-radius: 4px;
+background: transparent;
+cursor: pointer;
 }
 
-/* 
-   ACCESSIBILITY — REDUCED MOTION
+.menu-toggle span {
+display: block;
+width: 17px;
+height: 1px;
+background: var(--color-ink);
+transition: transform var(--transition);
+}
 
-   Some visitors prefer fewer animations because of motion
-   sensitivity or accessibility needs.
+.menu-toggle[aria-expanded="true"] span:first-child {
+transform: translateY(3.5px) rotate(45deg);
+}
 
-   This media query respects the operating system's
-   prefers-reduced-motion setting by minimizing transitions
-   and disabling smooth scrolling.
+.menu-toggle[aria-expanded="true"] span:last-child {
+transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.site-nav {
+position: absolute;
+top: var(--header-height);
+right: 0;
+left: 0;
+display: none;
+align-items: stretch;
+gap: 0;
+padding: 0.75rem var(--page-gutter) 1.25rem;
+border-bottom: 1px solid var(--color-line);
+background: var(--color-background);
+}
+
+.site-nav.open {
+display: flex;
+flex-direction: column;
+}
+
+.nav-link,
+.nav-contact {
+padding: 0.85rem 0;
+}
+
+.featured-work,
+.capabilities-section {
+padding-block: 4rem;
+}
+
+.section-heading {
+display: block;
+}
+
+.section-heading-link {
+margin-top: 1.2rem;
+}
+
+.project-grid {
+grid-template-columns: 1fr;
+gap: 2rem;
+}
+
+.project-card-large {
+grid-column: auto;
+}
+
+.project-visual,
+.project-card-large .project-visual {
+min-height: 280px;
+}
+
+.page-hero {
+padding-block: 4rem 3rem;
+}
+
+.page-hero h1 {
+font-size: clamp(2.7rem, 12vw, 4rem);
+}
+
+.about-intro {
+grid-template-columns: 1fr;
+padding-block: 3.5rem;
+}
+
+.about-photo-placeholder {
+min-height: 290px;
+}
+
+.education-card {
+flex-direction: column;
+gap: 1rem;
+padding: 1.25rem;
+}
+
+.skills-grid {
+grid-template-columns: 1fr;
+}
+
+.skill-group {
+padding: 1.3rem;
+}
+
+.contact-section{
+padding-bottom: 4rem;
+}
+
+.contact-panel {
+padding: 2rem 1.4rem;
+}
+
+.footer-inner {
+display: grid;
+grid-template-columns: 1fr auto;
+gap: 1rem;
+}
+
+.footer-links {
+grid-column: 1 / -1;
+grid-row: 2;
+}
+
+.footer-year {
+justify-self: end;
+}
+}
+
+/*
+ACCESSIBILITY — REDUCED MOTION
+
+Some visitors prefer fewer animations because of motion
+sensitivity or accessibility needs.
+
+This media query respects the operating system's
+prefers-reduced-motion setting by minimizing transitions
+and disabling smooth scrolling.
 */
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
+html {
+scroll-behavior: auto;
 }
+
+*,
+*::before,
+*::after {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+}
+
+.reveal {
+opacity: 1;
+transform: none;
+}
+}
+
 
 
 
@@ -1229,177 +1228,176 @@ h3 {
 /* Project detail pages */
 
 .back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  margin-bottom: 3rem;
-  color: var(--color-muted);
-  font-size: 0.85rem;
-  transition: color var(--transition);
+display: inline-flex;
+align-items: center;
+gap: 0.55rem;
+margin-bottom: 3rem;
+color: var(--color-muted);
+font-size: 0.85rem;
+transition: color var(--transition);
 }
 
 .back-link:hover {
-  color: var(--color-accent-dark);
+color: var(--color-accent-dark);
 }
 
 .project-detail-hero {
-  padding-block: 3rem 4rem;
+padding-block: 3rem 4rem;
 }
 
 .project-detail-hero h1 {
-  max-width: 900px;
-  margin-bottom: 1.2rem;
+max-width: 900px;
+margin-bottom: 1.2rem;
 }
 
 .project-detail-intro {
-  max-width: 650px;
-  margin-bottom: 2.5rem;
-  color: var(--color-muted);
-  font-size: 1.05rem;
+max-width: 650px;
+margin-bottom: 2.5rem;
+color: var(--color-muted);
+font-size: 1.05rem;
 }
 
 .project-meta {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--color-line);
+display: grid;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 1.5rem;
+padding-top: 1.5rem;
+border-top: 1px solid var(--color-line);
 }
 
 .project-meta-item span {
-  display: block;
-  margin-bottom: 0.4rem;
-  color: var(--color-muted-light);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+display: block;
+margin-bottom: 0.4rem;
+color: var(--color-muted-light);
+font-size: 0.7rem;
+font-weight: 500;
+letter-spacing: 0.07em;
+text-transform: uppercase;
 }
 
 .project-meta-item p {
-  margin-bottom: 0;
-  color: var(--color-ink);
-  font-size: 0.9rem;
+margin-bottom: 0;
+color: var(--color-ink);
+font-size: 0.9rem;
 }
 
 .project-detail-cover {
-  margin-bottom: 5rem;
+margin-bottom: 5rem;
 }
 
 .project-cover-placeholder {
-  display: grid;
-  min-height: clamp(280px, 48vw, 560px);
-  place-items: center;
-  background: var(--color-accent-light);
-  color: var(--color-muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-align: center;
-  text-transform: uppercase;
+display: grid;
+min-height: clamp(280px, 48vw, 560px);
+place-items: center;
+background: var(--color-accent-light);
+color: var(--color-muted);
+font-size: 0.75rem;
+letter-spacing: 0.06em;
+text-align: center;
+text-transform: uppercase;
 }
 
 .project-detail-body {
-  max-width: 850px;
+max-width: 850px;
 }
 
 .project-detail-section {
-  padding-block: 3.5rem;
-  border-bottom: 1px solid var(--color-line);
+padding-block: 3.5rem;
+border-bottom: 1px solid var(--color-line);
 }
 
 .project-detail-section h2 {
-  margin-bottom: 1.2rem;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+margin-bottom: 1.2rem;
+font-size: clamp(1.8rem, 4vw, 2.6rem);
 }
 
 .project-detail-section > p:not(.eyebrow) {
-  max-width: 680px;
-  color: var(--color-muted);
+max-width: 680px;
+color: var(--color-muted);
 }
 
 .project-gallery-placeholder {
-  display: grid;
-  min-height: 300px;
-  margin-block: 2rem;
-  place-items: center;
-  background: var(--color-paper-alt);
-  color: var(--color-muted-light);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  text-align: center;
-  text-transform: uppercase;
+display: grid;
+min-height: 300px;
+margin-block: 2rem;
+place-items: center;
+background: var(--color-paper-alt);
+color: var(--color-muted-light);
+font-size: 0.72rem;
+letter-spacing: 0.06em;
+text-align: center;
+text-transform: uppercase;
 }
 
 .placeholder-copy {
-  color: var(--color-muted-light);
-  font-size: 0.9rem;
+color: var(--color-muted-light);
+font-size: 0.9rem;
 }
 
 .project-detail-navigation {
-  display: flex;
-  justify-content: space-between;
-  padding-block: 3rem 5rem;
+display: flex;
+justify-content: space-between;
+padding-block: 3rem 5rem;
 }
 
 /* Project detail page responsive layout */
 
 @media (max-width: 850px) {
-  .project-meta {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 1.5rem;
-  }
+.project-meta {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+row-gap: 1.5rem;
+}
 
-  .project-detail-cover {
-    margin-bottom: 3rem;
-  }
+.project-detail-cover {
+margin-bottom: 3rem;
+}
 }
 
 @media (max-width: 640px) {
-  .project-detail-hero {
-    padding-block: 2rem 3rem;
-  }
-
-  .back-link {
-    margin-bottom: 2.5rem;
-  }
-
-  .project-meta {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.4rem 1rem;
-  }
-
-  .project-cover-placeholder {
-    min-height: 260px;
-  }
-
-  .project-detail-section {
-    padding-block: 2.5rem;
-  }
-
-  .project-gallery-placeholder {
-    min-height: 220px;
-  }
-
-  .project-detail-navigation {
-    padding-block: 2.5rem 3.5rem;
-  }
+.project-detail-hero {
+padding-block: 2rem 3rem;
 }
 
+.back-link {
+margin-bottom: 2.5rem;
+}
+
+.project-meta {
+grid-template-columns: 1fr 1fr;
+gap: 1.4rem 1rem;
+}
+
+.project-cover-placeholder {
+min-height: 260px;
+}
+
+.project-detail-section {
+padding-block: 2.5rem;
+}
+
+.project-gallery-placeholder {
+min-height: 220px;
+}
+
+.project-detail-navigation {
+padding-block: 2.5rem 3.5rem;
+}
+}
 
 .more-projects {
-  padding-top: 1rem;
-  padding-bottom: 3rem;
-  text-align: center;
+padding-top: 1rem;
+padding-bottom: 3rem;
+text-align: center;
 }
 
 .more-projects p {
-  margin: 0;
-  color: var(--color-muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
+margin: 0;
+color: var(--color-muted);
+font-size: 0.95rem;
+line-height: 1.7;
 }
 
 .more-projects strong {
-  color: var(--color-ink);
-  font-weight: 600;
+color: var(--color-ink);
+font-weight: 600;
 }
