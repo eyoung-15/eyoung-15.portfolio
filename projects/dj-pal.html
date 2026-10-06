@@ -52,12 +52,12 @@
         <span aria-hidden="true">←</span> All projects
       </a>
 
-      <p class="project-type">Artificial Intelligence · Creative Technology · Spring 2026</p>
+      <p class="project-type">AI · Audio Processing · Creative Technology · Spring 2026</p>
 
       <h1>DJ <span class="accent-text">pal.</span></h1>
 
       <p class="project-detail-intro">
-        A generative music system that uses AI and digital signal processing to turn uploaded songs into customizable genre-stylized remixes.
+        A generative music system that combines AI, digital signal processing, and user-controlled remixing to transform uploaded songs into genre-stylized remixes.
       </p>
 
       <div class="project-meta">
@@ -74,7 +74,7 @@
 
         <div class="project-meta-item">
           <span>Tools & technologies</span>
-          <p>Python · Hybrid Demucs · Librosa · MusicGen · Gradio · PyDub</p>
+          <p>Python · Hybrid Demucs · Librosa · MusicGen · Gradio · PyDub · NumPy · PyTorch</p>
         </div>
 
         <div class="project-meta-item">
@@ -108,11 +108,11 @@
         </p>
 
         <p>
-          DJ Pal uses digital signal processing techniques to modify the selected stems based on the chosen genre. These transformations include tempo adjustment, pitch shifting, equalization, reverb, distortion, gain, and percussive enhancements. Users can also choose to add a short AI-generated backing track using MusicGen.
+          DJ Pal combines digital signal processing with generative AI to transform the selected stems. Depending on the genre, the system can adjust tempo and pitch, apply equalization, reverb and distortion, change gain, and emphasize percussive elements. Users can also choose to add a short AI-generated backing track using MusicGen.
         </p>
 
         <p>
-          Rather than generating an entirely new song, DJ Pal keeps the original song as the foundation and gives users control over how it is reinterpreted.
+          Rather than replacing the original song with a newly generated track, DJ Pal keeps the original stems as the foundation and lets users decide which elements are transformed.
         </p>
       </article>
 
@@ -142,15 +142,15 @@
         <h2>From one song to a customizable remix</h2>
 
         <p>
-          DJ Pal is built as a multi-step audio processing pipeline. Each stage prepares the audio for the next, beginning with the original uploaded song and ending with a normalized remix.
+          DJ Pal is built as a multi-step audio processing pipeline. Each stage prepares the audio for the next, beginning with the original uploaded song and ending with a final normalized remix.
         </p>
 
         <p>
-          The system first converts the uploaded audio into a compatible WAV format. Hybrid Demucs then separates the song into four stems: vocals, bass, drums, and other instruments. These stems become the building blocks for the user's remix.
+          The system first converts the uploaded audio into WAV format for processing. Hybrid Demucs then separates the song into four stems: vocals, drums, bass, and other instruments. These stems become the building blocks for the user's remix.
         </p>
 
         <p>
-          After separation, DJ Pal applies genre-specific transformations to the stems selected by the user. The transformed and untransformed stems are then recombined into a final audio file. An optional MusicGen backing track can be generated and layered into the remix before the final normalization step.
+          After separation, DJ Pal applies genre-specific transformations only to the stems selected by the user. The transformed and untransformed stems are then recombined. If enabled, MusicGen generates an additional genre-specific backing track that is tempo-adjusted, looped with crossfades, and layered into the remix before the final audio is exported.
         </p>
 
         <div class="project-gallery-placeholder">
@@ -171,7 +171,7 @@
         </p>
 
         <p>
-          This separation step is also what makes the user's choices possible. Instead of applying a filter or effect to the entire song, DJ Pal can work with individual musical components.
+          This separation step is what makes the user's choices possible. Instead of applying a filter or effect to the entire song, DJ Pal can work with individual musical components and preserve stems that the user does not want to change.
         </p>
 
         <div class="project-gallery-placeholder">
@@ -188,15 +188,15 @@
         </p>
 
         <p>
-          Each genre is represented by a collection of parameters that define how the selected stems should be transformed. These include target tempo, musical key, equalization, reverb, distortion, gain, and percussive intensity.
+          Each genre is defined through a combination of target tempo, target key, gain, reverb, percussive emphasis, and additional processing rules. I also used genre-specific EQ and distortion where appropriate to make certain transformations more distinct.
         </p>
 
         <p>
-          I used Librosa and other Python audio libraries to apply these transformations. Tempo changes are handled through time stretching, while pitch shifting can be used to move a stem toward the genre's target key. Equalization changes the balance of frequencies, and harmonic-percussive source separation allows the system to emphasize rhythmic elements where appropriate.
+          I used Librosa and other Python audio libraries to apply these transformations. Tempo changes are handled through time stretching, while pitch shifting moves a stem toward the genre's target key. I estimated the dominant pitch class using chroma features and used the result to determine the pitch-shift interval.
         </p>
 
         <p>
-          This rule-based approach gives each genre a consistent set of characteristics while still allowing the original song and the user's selected stems to remain at the centre of the remix.
+          Harmonic-percussive source separation is also used to isolate rhythmic elements within a stem before recombining them with a genre-specific percussive boost. Together, these techniques create consistent transformation rules while keeping the original song and the user's selected stems at the centre of the remix.
         </p>
 
         <div class="project-gallery-placeholder">
@@ -213,7 +213,7 @@
         </p>
 
         <p>
-          Rather than using MusicGen to replace the original song, DJ Pal uses it to create a short genre-specific backing track. The generated audio is then looped with a crossfade and layered underneath the existing stems.
+          Rather than using MusicGen to replace the original song, DJ Pal uses it to create a short genre-specific backing track. The generated audio is tempo-adjusted to the remix, looped with crossfades, and layered underneath the existing stems.
         </p>
 
         <p>
@@ -221,7 +221,7 @@
         </p>
 
         <p>
-          Through testing, I found that the MusicGen backing track often made the genre transformation more noticeable than the rule-based processing alone.
+          Through testing, I found that the MusicGen backing track often made the genre transformation more noticeable than the rule-based processing alone, particularly for transformations such as EDM.
         </p>
 
         <div class="project-gallery-placeholder">
@@ -242,7 +242,7 @@
         </p>
 
         <p>
-          The final remix can then be generated and downloaded directly from the interface. The goal was to keep the controls understandable for someone who may have no background in music production or music theory.
+          The final remix can then be previewed and downloaded directly from the interface. The goal was to keep the controls understandable for someone who may have no background in music production or music theory.
         </p>
 
         <div class="project-gallery-placeholder">
@@ -255,11 +255,11 @@
         <h2>Testing whether the transformations worked</h2>
 
         <p>
-          I evaluated DJ Pal by comparing the original and remixed versions of songs using both audio analysis and listening-based evaluation. I wanted to see whether the transformations produced measurable changes as well as whether those changes actually contributed to the intended genre.
+          I evaluated DJ Pal by comparing the original and remixed versions of songs using both audio analysis and listening-based evaluation. I wanted to see whether the transformations produced measurable changes as well as whether those changes contributed to the intended genre.
         </p>
 
         <p>
-          I generated Mel spectrograms, rhythm plots, pitch visualizations, and energy graphs to compare the original and remixed audio. These visualizations made it possible to see how different processing techniques affected the frequency content, rhythm, pitch distribution, and overall energy of a song.
+          I generated Mel spectrograms, onset-strength plots, chroma visualizations, and RMS energy graphs to compare the original and remixed audio. These visualizations allowed me to examine changes in frequency content, rhythmic intensity, pitch distribution, and overall energy.
         </p>
 
         <p>
@@ -267,11 +267,11 @@
         </p>
 
         <div class="project-gallery-placeholder">
-          <span>Before / after spectrogram comparison</span>
+          <span>Before / after Mel spectrogram comparison</span>
         </div>
 
         <div class="project-gallery-placeholder">
-          <span>Rhythm / energy / pitch comparison visualizations</span>
+          <span>Onset-strength / chroma / RMS comparison visualizations</span>
         </div>
       </article>
 
@@ -296,7 +296,7 @@
         </p>
 
         <p>
-          The project ultimately demonstrated that a relatively complex audio-processing workflow could be packaged into an interface where the user only needs to make a few creative decisions.
+          The project demonstrated that a relatively complex audio-processing workflow could be packaged into an interface where the user only needs to make a few creative decisions while the system handles the underlying technical processing.
         </p>
       </article>
 
@@ -313,11 +313,11 @@
         </p>
 
         <p>
-          Processing time was another consideration. DJ Pal uses two computationally demanding AI models, which makes generating a remix relatively slow. MusicGen also produces short audio clips, so the generated backing track needs to be looped rather than generated for the full length of the song.
+          Processing time was another consideration. DJ Pal relies on Hybrid Demucs for stem separation and can optionally run MusicGen to generate an additional backing track, making the full remixing process relatively slow.
         </p>
 
         <p>
-          These limitations influenced how I designed the system and helped me understand the trade-offs involved when combining multiple AI models with traditional audio processing.
+          MusicGen also produces short audio clips, so the generated backing track needs to be tempo-adjusted and looped rather than generated for the full length of the song. These limitations influenced how I designed the system and helped me understand the trade-offs involved when combining machine learning models with traditional audio processing.
         </p>
       </article>
 
@@ -330,7 +330,7 @@
         </p>
 
         <p>
-          One of the biggest things I learned was that adding AI to a creative system does not necessarily mean giving the AI complete control. DJ Pal works by dividing creative decisions between the user and the system. The user chooses the stems and genre, while the system handles the technical audio transformations.
+          One of the biggest things I learned was that adding AI to a creative system does not necessarily mean giving the AI complete control. DJ Pal divides creative decisions between the user and the system: the user chooses the stems and genre, while the system handles the technical audio transformations.
         </p>
 
         <p>
@@ -338,7 +338,7 @@
         </p>
 
         <p>
-          If I continued developing DJ Pal, I would explore faster and more advanced audio models, improve stem separation, add more user controls without making the interface more complicated, and allow users to combine genres such as Pop Punk or Industrial Metal.
+          If I continued developing DJ Pal, I would focus on improving processing speed and stem separation, giving users more control over the intensity of individual effects, improving vocal pitch-shifting, and allowing users to combine or customize genres instead of relying entirely on fixed presets.
         </p>
       </article>
 
