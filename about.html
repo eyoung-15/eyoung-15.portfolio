@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Sets the character encoding and responsive viewport. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Browser tab title. -->
   <title>About Me — Emily Youngward</title>
 
-  <!-- Loads the Poppins font used throughout the portfolio. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Shared CSS and JavaScript files. -->
   <link rel="stylesheet" href="css/style.css">
   <script src="javascript/main.js" defer></script>
 </head>
 
 <body>
-  <!-- Keyboard-accessible shortcut to the main content. -->
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- Shared website header. -->
   <header class="site-header">
     <div class="header-inner">
-
-      <!-- Wordmark links to the home page. -->
       <a class="wordmark" href="index.html" aria-label="Emily Youngward home">
         emily youngward<span>.</span>
       </a>
 
-      <!-- Button used to open and close mobile navigation. -->
       <button class="menu-toggle" type="button"
         aria-label="Open navigation"
         aria-expanded="false"
@@ -40,7 +30,6 @@
         <span></span>
       </button>
 
-      <!-- Main navigation with the About page marked as active. -->
       <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
         <a class="nav-link" href="index.html">home</a>
         <a class="nav-link" href="work.html">projects</a>
@@ -51,47 +40,37 @@
   </header>
 
   <main id="main-content">
-
-    <!-- Page title. -->
     <section class="page-hero section-shell">
       <h1>about<span class="accent-text">me.</span></h1>
     </section>
 
-    <!-- Biography section with a portrait placeholder and introduction. -->
     <section class="about-intro section-shell">
-
-      <!-- Temporary portrait area. role and aria-label provide accessible text. -->
       <div class="about-photo-placeholder" role="img" aria-label="Portrait placeholder">
         <span>Portrait<br>coming soon</span>
       </div>
 
-      <!-- Biography text. -->
       <div class="about-intro-copy">
         <p class="eyebrow">A bit about me</p>
 
         <p>
           I’m Emily, a recent graduate from Simon Fraser University with a BSc in
           Interactive Arts and Technology. My work has covered web and mobile
-          applications, interactive visualizations, AI projects, and
-          computer-vision systems.
+          applications, interactive visualizations, AI projects, and computer-vision systems.
         </p>
 
         <p>
-          I tend to be most interested in projects where there isn’t one obvious answer. 
-          I like figuring out how an interface should work, how information should be organized, 
+          I tend to be most interested in projects where there isn’t one obvious answer.
+          I like figuring out how an interface should work, how information should be organized,
           and how the technical side can support the experience rather than getting in the way of it.
-          A lot of my university work involved learning by building. 
-          That meant trying things, running into problems, changing the approach, 
-          and figuring out why something wasn’t working. That process is still a big part of how I approach projects.
+          A lot of my university work involved learning by building. That meant trying things,
+          running into problems, changing the approach, and figuring out why something wasn’t working.
+          That process is still a big part of how I approach projects.
         </p>
       </div>
     </section>
 
-    <!-- Education information. -->
     <section class="education-section section-shell">
-      <div class="section-kicker">
-        <span class="section-label">Education</span>
-      </div>
+      <p class="eyebrow">Education</p>
 
       <div class="education-card">
         <div>
@@ -104,20 +83,14 @@
             Concentration: Design and Development for Web and Mobile
           </p>
         </div>
-
         <span class="education-location">Burnaby, BC</span>
       </div>
     </section>
 
-    <!-- Skills are grouped by area to make the information easier to scan. -->
     <section class="skills-section section-shell">
-      <div class="section-kicker">
-        <span class="section-label">Skills & tools</span>
-      </div>
+      <p class="eyebrow">Skills & tools</p>
 
       <div class="skills-grid">
-
-        <!-- Design and user experience skills. -->
         <article class="skill-group">
           <h3>Design & experience</h3>
           <ul>
@@ -131,7 +104,6 @@
           </ul>
         </article>
 
-        <!-- Front-end and back-end web development skills. -->
         <article class="skill-group">
           <h3>Web development</h3>
           <ul>
@@ -144,7 +116,6 @@
           </ul>
         </article>
 
-        <!-- Mobile development, databases, and programming languages. -->
         <article class="skill-group">
           <h3>Mobile & data</h3>
           <ul>
@@ -157,7 +128,6 @@
           </ul>
         </article>
 
-        <!-- Creative and technical tools. -->
         <article class="skill-group">
           <h3>Creative technology</h3>
           <ul>
@@ -174,23 +144,19 @@
       </div>
     </section>
 
-    <!-- Contact panel. Links to the LinkedIn profile in a new tab. -->
     <section class="contact-section section-shell" id="contact">
       <div class="contact-panel">
         <h2>Have a project or opportunity in mind?</h2>
         <p>I’d be happy to hear from you.</p>
-
         <a class="button button-light"
            href="https://www.linkedin.com/in/emily-youngward-a0785a405"
-           target="_blank"
-           rel="noopener noreferrer">
+           target="_blank" rel="noopener noreferrer">
           Connect on LinkedIn <span aria-hidden="true">↗</span>
         </a>
       </div>
     </section>
   </main>
 
-  <!-- Shared footer. -->
   <footer class="site-footer">
     <div class="footer-inner">
       <a class="footer-wordmark" href="index.html">
