@@ -1443,3 +1443,9 @@ font-weight: 600;
   height: auto;
   margin-inline: auto;
 }
+
+.project-poster-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-block: 2.5rem;
+}
