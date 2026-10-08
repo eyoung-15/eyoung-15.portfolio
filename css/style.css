@@ -1424,3 +1424,22 @@ line-height: 1.7;
 color: var(--color-ink);
 font-weight: 600;
 }
+
+
+.project-poster {
+  width: 100%;
+  margin-block: 2.5rem;
+  padding: 1.5rem;
+  background: var(--color-paper-alt);
+  border: 1px solid var(--color-line);
+  overflow-x: auto;
+}
+
+.project-poster img {
+  display: block;
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
