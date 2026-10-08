@@ -438,10 +438,12 @@ isolation: isolate;
 transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.project-visual img {
+.project-visual img,
+.case-study-visual img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .project-card-large .project-visual {
@@ -780,18 +782,21 @@ order: 2;
 }
 
 .case-study-visual {
-position: relative;
-display: grid;
-min-height: 350px;
-place-items: center;
-overflow: hidden;
-transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  display: flex;
+  min-height: 350px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .case-study-visual img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
 }
 
 .case-study-visual:hover {
@@ -1048,7 +1053,7 @@ order: initial;
 }
 
 .case-study-visual {
-min-height: 320px;
+  min-height: 280px;
 }
 
 .footer-inner {
