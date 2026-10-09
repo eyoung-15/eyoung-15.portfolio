@@ -1529,6 +1529,12 @@ font-weight: 600;
 /* Tall research and persona posters */
 
 .project-poster--portrait img {
+  height: 540px;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.project-poster--persona img {
   aspect-ratio: 3 / 4;
 }
 
