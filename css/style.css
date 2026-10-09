@@ -1426,7 +1426,7 @@ font-weight: 600;
 }
 
 
-.project-poster-grid {
+/* .project-poster-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
@@ -1469,5 +1469,114 @@ font-weight: 600;
   .project-poster img {
     height: auto;
     max-height: 500px;
+  }
+} */
+
+
+
+/* Project image and document galleries */
+
+.project-poster-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-block: 2rem;
+  align-items: start;
+}
+
+.project-poster {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  text-decoration: none;
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.project-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--color-paper-alt);
+}
+
+.project-poster > span {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.project-poster:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+
+.project-poster:focus-visible {
+  outline: 2px solid var(--color-accent-dark);
+  outline-offset: 4px;
+}
+
+/* Tall research and persona posters */
+
+.project-poster--portrait img {
+  aspect-ratio: 3 / 4;
+}
+
+/* Photos from the participatory workshop */
+
+.project-poster--photo img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* PDF preview cards */
+
+.project-poster--pdf img {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--color-white);
+}
+
+/* Final physical prototype */
+
+.project-poster--feature img {
+  aspect-ratio: 5 / 4;
+  object-fit: contain;
+}
+
+/* Three persona cards */
+
+.project-poster-grid--personas {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 850px) {
+  .project-poster-grid--personas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .project-poster-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-poster-grid--personas {
+    grid-template-columns: 1fr;
+  }
+
+  .project-poster {
+    padding: 0.75rem;
   }
 }
