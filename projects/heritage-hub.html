@@ -304,6 +304,13 @@
     <p>
       One of the more difficult parts of development was getting image uploads to work correctly. Our first implementation successfully uploaded images to MongoDB, but the stored data was not in a format that the application could display. After researching the issue, I changed the implementation to convert uploaded images into Base64 strings, which allowed them to be stored and displayed correctly.
     </p>
+    
+    <a class="project-poster" href="../images/base64_solution.png" target="_blank" rel="noopener">
+      <img
+      src="../images/base64_solution.png"
+      alt="Code showing how images were converted to a Base64 string">
+      <span>Code showing how images were converted to a Base64 string</span>
+    </a>
 
     <p>
       We also encountered an issue with deleting facilities. If a facility was deleted while it was still saved in a user's Bucket List or Travel Journal, the application could crash because the user's stored reference no longer pointed to an existing facility.
@@ -313,9 +320,12 @@
       I fixed this by updating the facility delete route to use User.updateMany and remove the deleted facility from users' Bucket Lists and Travel Journals. This allowed the related user data to stay consistent after a facility was removed.
     </p>
 
-    <div class="project-gallery-placeholder">
-      <span>Technical challenge / code screenshot</span>
-    </div>
+  <a class="project-poster" href="../images/updateMany_solution.png" target="_blank" rel="noopener">
+      <img
+      src="../images/updateMany_solution.png"
+      alt="Code showing User.updateMany in the delete route">
+      <span>Code showing User.updateMany in the delete route</span>
+    </a>
   </article>
 
   <article class="project-detail-section">
