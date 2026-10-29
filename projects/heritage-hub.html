@@ -91,7 +91,7 @@
   </div>
   
   <div class="project-detail-actions">
-    <a class="button button-primary" href="https://github.com/eyoung-15/HeritageHub-IAT_459_Final_Project">
+    <a class="button button-primary" href="https://github.com/eyoung-15/HeritageHub-IAT_459_Final_Project" target="_blank" rel="noopener noreferrer">
       View GitHub repository <span aria-hidden="true">↗</span>
     </a>
   </div>
@@ -102,7 +102,7 @@
 
 <section class="project-detail-cover section-shell">
   <div class="project-cover-placeholder">
-    <img src="../images/heritage_home_page.png" alt="Part of home page on HeritageHub website">
+    <img src="../images/heritage_home_page.png" alt="HeritageHub home page showing the cultural facilities discovery interface">
   </div>
 </section>
 
@@ -125,13 +125,16 @@
     <p>
       Registered members can also contribute to the database, write reviews, upload images, and save places to a personal Bucket List or Travel Journal. Administrators have additional tools for managing facilities, users, and community content.
     </p>
+    <div class="project-poster-grid project-poster-grid--single">
     
     <a class="project-poster" href="../images/heritage_nav.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/heritage_nav.png"
       alt="Screenshot of HeritageHub home page featuring navigation bar">
-      <span>Screenshot of HeritageHub navigation bar / home page</span>
+      <span>HeritageHub home page and main navigation</span>
     </a>
+    </div>
+
   </article>
 
   <article class="project-detail-section">
@@ -149,13 +152,16 @@
     <p>
       From there, we focused the application around three main things: discovering places, learning more about them, and keeping track of places users had visited or wanted to visit.
     </p>
+    <div class="project-poster-grid project-poster-grid--single">
 
     <a class="project-poster" href="../images/heritagehub_features.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/heritagehub_features.png"
       alt="Planned features of HeritageHub">
-      <span>Planned features of HeritageHub</span>
+      <span>Planned feature set for HeritageHub</span>
     </a>
+    </div>
+
   </article>
 
   <article class="project-detail-section">
@@ -173,13 +179,16 @@
     <p>
       This also meant the backend needed to distinguish between public requests, authenticated member actions, and administrator actions. Planning these permissions early gave us a clearer structure for implementing protected routes and authorization later in development.
     </p>
+    <div class="project-poster-grid project-poster-grid--single">
     
     <a class="project-poster" href="../images/app_structure.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/app_structure.png"
       alt="Planned application architecture of HeritageHub">
-      <span>Planned application architecture of HeritageHub</span>
+      <span>Application structure and planned data flow</span>
     </a>
+    </div>
+
   </article>
 
   <article class="project-detail-section">
@@ -197,25 +206,28 @@
     <p>
       Reviews were structured around a specific facility and user, with each review storing a rating, comment, timestamp, and optional image. This made it possible to retrieve reviews for individual facilities and calculate their average ratings.
     </p>
+    <div class="project-poster-grid">
 
     <a class="project-poster" href="../images/facilities_schema_update.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/facilities_schema_update.png"
       alt="Screenshot of facilities schema on MongoDB">
-      <span>Screenshot of facilities schema on MongoDB</span>
+      <span>Mongoose schema for facility records</span>
     </a>
     <a class="project-poster" href="../images/reviews_schema_update.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/reviews_schema_update.png"
       alt="Screenshot of reviews schema on MongoDB">
-      <span>Screenshot of reviews schema on MongoDB</span>
+      <span>Mongoose schema for facility reviews</span>
     </a>
     <a class="project-poster" href="../images/users_schema_update.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/users_schema_update.png"
       alt="Screenshot of users schema on MongoDB">
-      <span>Screenshot of users schema on MongoDB</span>
+      <span>Mongoose schema for user accounts and saved facilities</span>
     </a>
+    </div>
+
   </article>
 
   <article class="project-detail-section">
@@ -233,31 +245,34 @@
     <p>
       I also created the seed script used to populate the database from the provided CSV dataset. This gave us a repeatable way to import the facility data into MongoDB rather than manually entering each location.
     </p>
-
-  <a class="project-poster" href="../images/route_structure_1.png" target="_blank" rel="noopener">
-      <img
+    <div class="project-poster-grid">
+      
+      <a class="project-poster" href="../images/route_structure_1.png" target="_blank" rel="noopener">
+      <img loading="lazy"
       src="../images/route_structure_1.png"
       alt="Code showing Facility API with MongoDB aggregation, filtering, and review statistics">
-      <span>Code showing Facility API with MongoDB aggregation, filtering, and review statistics</span>
+      <span>Facility API implementation with filtering and review statistics</span>
     </a>
       <a class="project-poster" href="../images/route_structure_2.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/route_structure_2.png"
       alt="Code showing Facility API with MongoDB aggregation, filtering, and review statistics">
-      <span>Code showing Facility API with MongoDB aggregation, filtering, and review statistics</span>
+      <span>Facility API implementation with filtering and review statistics</span>
     </a>
       <a class="project-poster" href="../images/route_structure_3.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/route_structure_3.png"
       alt="Code showing Facility API with MongoDB aggregation, filtering, and review statistics">
-      <span>Code showing Facility API with MongoDB aggregation, filtering, and review statistics</span>
+      <span>Facility API implementation with filtering and review statistics</span>
     </a>
     <a class="project-poster" href="../images/api_table.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/api_table.png"
       alt="Table showing final API methods and endpoints">
-      <span>Table showing final API methods and endpoints</span>
+      <span>Overview of API methods and endpoints</span>
     </a>
+    </div>
+
   </article>
 
   <article class="project-detail-section">
@@ -275,31 +290,29 @@
     <p>
       The application also distinguishes between member and administrator permissions. Members can manage their own contributions, while administrators can manage content and users across the application.
     </p>
+    <div class="project-poster-grid">
     
     <a class="project-poster" href="../images/register_flow.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/register_flow.png"
       alt="Authentication & Security, implemented user login with bcrypt password verification and JWT-based authentication for protected API routes">
-      <span>Authentication & Security, implemented user login with bcrypt password verification and JWT-based authentication for protected API routes</span>
+      <span>Backend code for credential verification and JWT authentication</span>
     </a>
     <a class="project-poster" href="../images/sign_up_page.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/sign_up_page.png"
       alt="Screenshot of register page">
-      <span>Screenshot of register page</span>
+      <span>HeritageHub registration form</span>
     </a>
-    <a class="project-poster" href="../images/login_flow.png" target="_blank" rel="noopener">
-      <img
-      src="../images/login_flow.png"
-      alt="Authentication & Security, implemented user login with bcrypt password verification and JWT-based authentication for protected API routes">
-      <span>Authentication & Security, implemented user login with bcrypt password verification and JWT-based authentication for protected API routes</span>
-    </a>
+    
     <a class="project-poster" href="../images/login_page.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/login_page.png"
       alt="Screenshot of login page">
-      <span>Screenshot of login page</span>
+      <span>HeritageHub login form</span>
     </a>
+    </div>
+
   </article>
 
   <article class="project-detail-section">
@@ -317,26 +330,29 @@
     <p>
       I also implemented review averaging and review image displays on facility cards, along with pagination and filtering functionality for the home page. These features helped make the large facility dataset easier to browse.
     </p>
+    <div class="project-poster-grid">
 
 
     <a class="project-poster" href="../images/facility_details_p1.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/facility_details_p1.png"
       alt="Screenshot of part of facility details page">
-      <span>Screenshot of part of facility details page</span>
+      <span>Facility details page with location and facility information</span>
     </a>
     <a class="project-poster" href="../images/facility_details_p2.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/facility_details_p2.png"
       alt="Screenshot of part of facility details page">
-      <span>Screenshot of part of facility details page</span>
+      <span>Facility details page with location and facility information</span>
     </a>
     <a class="project-poster" href="../images/reviews_page.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/reviews_page.png"
       alt="Screenshot of add review page">
-      <span>Screenshot of add review page</span>
+      <span>Review form for submitting a facility rating and comment</span>
     </a>
+    </div>
+
   </article>
 
   <article class="project-detail-section">
@@ -346,13 +362,16 @@
     <p>
       One of the more difficult parts of development was getting image uploads to work correctly. Our first implementation successfully uploaded images to MongoDB, but the stored data was not in a format that the application could display. After researching the issue, I changed the implementation to convert uploaded images into Base64 strings, which allowed them to be stored and displayed correctly.
     </p>
+    <div class="project-poster-grid project-poster-grid--single">
     
     <a class="project-poster" href="../images/base64_solution.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/base64_solution.png"
       alt="Code showing how images were converted to a Base64 string">
-      <span>Code showing how images were converted to a Base64 string</span>
+      <span>Image upload code that converts uploaded image data to Base64</span>
     </a>
+    </div>
+
 
     <p>
       We also encountered an issue with deleting facilities. If a facility was deleted while it was still saved in a user's Bucket List or Travel Journal, the application could crash because the user's stored reference no longer pointed to an existing facility.
@@ -361,13 +380,16 @@
     <p>
       I fixed this by updating the facility delete route to use User.updateMany and remove the deleted facility from users' Bucket Lists and Travel Journals. This allowed the related user data to stay consistent after a facility was removed.
     </p>
+    <div class="project-poster-grid project-poster-grid--single">
 
   <a class="project-poster" href="../images/updateMany_solution.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/updateMany_solution.png"
       alt="Code showing User.updateMany in the delete route">
-      <span>Code showing User.updateMany in the delete route</span>
+      <span>Facility deletion logic that removes stale references from user lists</span>
     </a>
+    </div>
+
   </article>
 
   <article class="project-detail-section">
@@ -381,48 +403,49 @@
     <p>
       Visitors can browse and explore facilities without an account, while members can create contributions and maintain their own Bucket List and Travel Journal. Administrators have additional controls for managing facilities, reviews, images, and users.
     </p>
+    <div class="project-poster-grid">
     
     <a class="project-poster" href="../images/admin_reviews.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/admin_reviews.png"
       alt="Screenshot of admin page for reviews management">
-      <span>Screenshot of admin page for reviews management</span>
+      <span>Admin interface for managing reviews</span>
     </a>
     <a class="project-poster" href="../images/admin_users.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/admin_users.png"
       alt="Screenshot of admin page for user management">
-      <span>Screenshot of admin page for user management</span>
+      <span>Admin interface for managing user accounts</span>
     </a>
     <a class="project-poster" href="../images/admin_facilities.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/admin_facilities.png"
       alt="Screenshot of admin page for facility management">
-      <span>Screenshot of admin page for facility management</span>
+      <span>Admin interface for managing facilities</span>
     </a>
+    </div>
+
 
     <p>
       The project demonstrated that the original dataset could support much more than a searchable directory. By combining it with user accounts, reviews, images, saved locations, and an interactive map, we turned the data into an application people could actually use to plan and document their experiences.
     </p>
+    <div class="project-poster-grid">
     
     <a class="project-poster" href="../images/travel_journal_page.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/travel_journal_page.png"
       alt="Screenshot of travel journal page">
-      <span>Screenshot of travel journal page</span>
+      <span>Travel Journal page for saved visits</span>
     </a>
-    <a class="project-poster" href="../images/bucket_list_page.png" target="_blank" rel="noopener">
-      <img
-      src="../images/bucket_list_page.png"
-      alt="Screenshot of bucket list page">
-      <span>Screenshot of bucket list page</span>
-    </a>
+    
     <a class="project-poster" href="../images/add_facility_page.png" target="_blank" rel="noopener">
-      <img
+      <img loading="lazy"
       src="../images/add_facility_page.png"
       alt="Screenshot of add facility page">
-      <span>Screenshot of add facility page</span>
+      <span>Form for adding a facility</span>
     </a>
+    </div>
+
   </article>
 
   <article class="project-detail-section">
@@ -445,8 +468,25 @@
       In addition, I worked on review averaging and review image displays on facility cards, as well as pagination and filtering for the home page. Working across these areas meant I had to consider how the database, backend routes, and React interface needed to work together.
     </p>
 
-    <div class="project-gallery-placeholder">
-      <span>My code / feature contribution screenshots</span>
+    <div class="project-poster-grid project-poster-grid--contributions">
+      <a class="project-poster" href="../images/route_structure_1.png" target="_blank" rel="noopener">
+      <img loading="lazy"
+      src="../images/route_structure_1.png"
+      alt="Backend contribution: facility API and data retrieval">
+      <span>Backend contribution: facility API and data retrieval</span>
+    </a>
+      <a class="project-poster" href="../images/login_flow.png" target="_blank" rel="noopener">
+      <img loading="lazy"
+      src="../images/login_flow.png"
+      alt="Authentication contribution: credential checks and JWT flow">
+      <span>Authentication contribution: credential checks and JWT flow</span>
+    </a>
+      <a class="project-poster" href="../images/bucket_list_page.png" target="_blank" rel="noopener">
+      <img loading="lazy"
+      src="../images/bucket_list_page.png"
+      alt="Feature contribution: member-facing Bucket List">
+      <span>Feature contribution: member-facing Bucket List</span>
+    </a>
     </div>
   </article>
 

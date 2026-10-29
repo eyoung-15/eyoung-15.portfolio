@@ -438,12 +438,10 @@ isolation: isolate;
 transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.project-visual img,
-.case-study-visual img {
-  display: block;
+.project-visual img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .project-card-large .project-visual {
@@ -782,21 +780,18 @@ order: 2;
 }
 
 .case-study-visual {
-  position: relative;
-  display: flex;
-  min-height: 350px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
+position: relative;
+display: grid;
+min-height: 350px;
+place-items: center;
+overflow: hidden;
+transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .case-study-visual img {
-  display: block;
   width: 100%;
-  height: auto;
-  max-height: 600px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 
 .case-study-visual:hover {
@@ -1053,7 +1048,7 @@ order: initial;
 }
 
 .case-study-visual {
-  min-height: 280px;
+min-height: 320px;
 }
 
 .footer-inner {
@@ -1425,57 +1420,7 @@ color: var(--color-ink);
 font-weight: 600;
 }
 
-
-/* .project-poster-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
-  margin-block: 2.5rem;
-}
-
-.project-poster {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1rem;
-  background: var(--color-paper-alt);
-  border: 1px solid var(--color-line);
-  text-decoration: none;
-  color: var(--color-ink);
-}
-
-.project-poster img {
-  display: block;
-  width: 100%;
-  height: 320px;
-  object-fit: contain;
-  background: var(--color-white);
-}
-
-.project-poster span {
-  font-size: 0.85rem;
-  color: var(--color-muted);
-}
-
-.project-poster:hover {
-  border-color: var(--color-accent);
-}
-
-@media (max-width: 640px) {
-  .project-poster-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-poster img {
-    height: auto;
-    max-height: 500px;
-  }
-} */
-
-
-
-/* Project image and document galleries */
-
+/* Project image and document galleries — shared styles used by Paint SKU Training Flipbook */
 .project-poster-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1527,7 +1472,6 @@ font-weight: 600;
 }
 
 /* Tall research and persona posters */
-
 .project-poster--portrait img {
   height: 540px;
   aspect-ratio: auto;
@@ -1539,14 +1483,12 @@ font-weight: 600;
 }
 
 /* Photos from the participatory workshop */
-
 .project-poster--photo img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
 /* PDF preview cards */
-
 .project-poster--pdf img {
   aspect-ratio: 4 / 3;
   object-fit: contain;
@@ -1554,14 +1496,12 @@ font-weight: 600;
 }
 
 /* Final physical prototype */
-
 .project-poster--feature img {
   aspect-ratio: 5 / 4;
   object-fit: contain;
 }
 
 /* Three persona cards */
-
 .project-poster-grid--personas {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -1584,5 +1524,130 @@ font-weight: 600;
 
   .project-poster {
     padding: 0.75rem;
+  }
+}
+
+
+/* HeritageHub-only case-study refinements. These do not alter Paint SKU image layouts. */
+.heritage-hub-page .project-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.heritage-hub-page .project-detail-body {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.heritage-hub-page .project-detail-section {
+  padding-block: 3rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.heritage-hub-page .project-detail-section h2 {
+  margin-bottom: 0.9rem;
+}
+
+.heritage-hub-page .project-detail-section > p:not(.eyebrow) {
+  max-width: 70ch;
+  line-height: 1.75;
+}
+
+.heritage-hub-page .project-cover-placeholder {
+  overflow: hidden;
+}
+
+.heritage-hub-page .project-cover-placeholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.heritage-hub-page .project-poster-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.25rem;
+  margin-block: 1.5rem 0.25rem;
+}
+
+.heritage-hub-page .project-poster-grid--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.heritage-hub-page .project-poster-grid--single .project-poster {
+  max-width: 100%;
+}
+
+.heritage-hub-page .project-poster {
+  gap: 0.6rem;
+  padding: 0.65rem;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.heritage-hub-page .project-poster img {
+  height: auto;
+  max-height: 340px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: var(--color-paper-alt);
+}
+
+.heritage-hub-page .project-poster > span {
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.heritage-hub-page .project-poster:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  box-shadow: 0 6px 18px rgba(35, 9, 3, 0.06);
+}
+
+.heritage-hub-page .project-poster:focus-visible {
+  outline: 2px solid var(--color-accent-dark);
+  outline-offset: 3px;
+}
+
+.heritage-hub-page .project-poster-grid--contributions .project-poster img {
+  max-height: 300px;
+}
+
+@media (max-width: 640px) {
+  .heritage-hub-page .project-detail-section {
+    padding-block: 2.5rem;
+  }
+
+  .heritage-hub-page .project-poster-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .heritage-hub-page .project-poster-grid--single {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .heritage-hub-page .project-poster img {
+    max-height: 360px;
+  }
+
+  .heritage-hub-page .project-cover-placeholder img {
+    max-height: 420px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heritage-hub-page .project-poster {
+    transition: none;
+  }
+
+  .heritage-hub-page .project-poster:hover {
+    transform: none;
   }
 }
