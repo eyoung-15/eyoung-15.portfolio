@@ -1028,1124 +1028,626 @@ wide or narrower.
 Grid layouts become simpler, spacing is reduced, and
 elements are rearranged to fit smaller screens.
 */
-
 @media (max-width: 850px) {
-
 :root {
-
 --header-height: 72px;
-
 }
 
 .capabilities-layout {
-
 grid-template-columns: 1fr;
-
 gap: 2rem;
-
 }
 
 .case-study {
-
 grid-template-columns: 1fr;
-
 gap: 1.8rem;
-
 }
 
 .case-study:nth-child(even) .case-study-visual {
-
 order: initial;
-
 }
 
 .case-study-visual {
-
 min-height: 320px;
-
 }
 
 .footer-inner {
-
 flex-wrap: wrap;
-
 justify-content: space-between;
-
 padding-block: 1.5rem;
-
 }
-
 }
 
 /*
-
 RESPONSIVE LAYOUT — MOBILE
 
 These rules apply at 640px and below.
 
 The desktop navigation is replaced with a collapsible menu.
-
 Multi-column layouts become single-column layouts.
-
 Spacing and typography are adjusted for smaller screens.
-
 */
-
 @media (max-width: 640px) {
-
 .menu-toggle {
-
 display: flex;
-
 width: 42px;
-
 height: 42px;
-
 flex-direction: column;
-
 align-items: center;
-
 justify-content: center;
-
 gap: 6px;
-
 border: 1px solid rgba(35, 9, 3, 0.35);
-
 border-radius: 4px;
-
 background: transparent;
-
 cursor: pointer;
-
 }
 
 .menu-toggle span {
-
 display: block;
-
 width: 17px;
-
 height: 1px;
-
 background: var(--color-ink);
-
 transition: transform var(--transition);
-
 }
 
 .menu-toggle[aria-expanded="true"] span:first-child {
-
 transform: translateY(3.5px) rotate(45deg);
-
 }
 
 .menu-toggle[aria-expanded="true"] span:last-child {
-
 transform: translateY(-3.5px) rotate(-45deg);
-
 }
 
 .site-nav {
-
 position: absolute;
-
 top: var(--header-height);
-
 right: 0;
-
 left: 0;
-
 display: none;
-
 align-items: stretch;
-
 gap: 0;
-
 padding: 0.75rem var(--page-gutter) 1.25rem;
-
 border-bottom: 1px solid var(--color-line);
-
 background: var(--color-background);
-
 }
 
 .site-nav.open {
-
 display: flex;
-
 flex-direction: column;
-
 }
 
 .nav-link,
-
 .nav-contact {
-
 padding: 0.85rem 0;
-
 }
 
 .featured-work,
-
 .capabilities-section {
-
 padding-block: 4rem;
-
 }
 
 .section-heading {
-
 display: block;
-
 }
 
 .section-heading-link {
-
 margin-top: 1.2rem;
-
 }
 
 .project-grid {
-
 grid-template-columns: 1fr;
-
 gap: 2rem;
-
 }
 
 .project-card-large {
-
 grid-column: auto;
-
 }
 
 .project-visual,
-
 .project-card-large .project-visual {
-
 min-height: 280px;
-
 }
 
 .page-hero {
-
 padding-block: 4rem 3rem;
-
 }
 
 .page-hero h1 {
-
 font-size: clamp(2.7rem, 12vw, 4rem);
-
 }
 
 .about-intro {
-
 grid-template-columns: 1fr;
-
 padding-block: 3.5rem;
-
 }
 
 .about-photo-placeholder {
-
 min-height: 290px;
-
 }
 
 .education-card {
-
 flex-direction: column;
-
 gap: 1rem;
-
 padding: 1.25rem;
-
 }
 
 .skills-grid {
-
 grid-template-columns: 1fr;
-
 }
 
 .skill-group {
-
 padding: 1.3rem;
-
 }
 
 .contact-section{
-
 padding-bottom: 4rem;
-
 }
 
 .contact-panel {
-
 padding: 2rem 1.4rem;
-
 }
 
 .footer-inner {
-
 display: grid;
-
 grid-template-columns: 1fr auto;
-
 gap: 1rem;
-
 }
 
 .footer-links {
-
 grid-column: 1 / -1;
-
 grid-row: 2;
-
 }
 
 .footer-year {
-
 justify-self: end;
-
 }
-
 }
 
 /*
-
 ACCESSIBILITY — REDUCED MOTION
 
 Some visitors prefer fewer animations because of motion
-
 sensitivity or accessibility needs.
 
 This media query respects the operating system's
-
 prefers-reduced-motion setting by minimizing transitions
-
 and disabling smooth scrolling.
-
 */
 
 @media (prefers-reduced-motion: reduce) {
-
 html {
-
 scroll-behavior: auto;
-
 }
 
 *,
-
 *::before,
-
 *::after {
-
 animation-duration: 0.01ms !important;
-
 animation-iteration-count: 1 !important;
-
 transition-duration: 0.01ms !important;
-
 }
 
 .reveal {
-
 opacity: 1;
-
 transform: none;
-
+}
 }
 
-}
+
+
+
 
 /* Project detail pages */
 
 .back-link {
-
 display: inline-flex;
-
 align-items: center;
-
 gap: 0.55rem;
-
 margin-bottom: 3rem;
-
 color: var(--color-muted);
-
 font-size: 0.85rem;
-
 transition: color var(--transition);
-
 }
 
 .back-link:hover {
-
 color: var(--color-accent-dark);
-
 }
 
 .project-detail-hero {
-
 padding-block: 3rem 4rem;
-
 }
 
 .project-detail-hero h1 {
-
 max-width: 900px;
-
 margin-bottom: 1.2rem;
-
 }
 
 .project-detail-intro {
-
 max-width: 650px;
-
 margin-bottom: 2.5rem;
-
 color: var(--color-muted);
-
 font-size: 1.05rem;
-
 }
 
 .project-meta {
-
 display: grid;
-
 grid-template-columns: repeat(4, minmax(0, 1fr));
-
 gap: 1.5rem;
-
 padding-top: 1.5rem;
-
 border-top: 1px solid var(--color-line);
-
 }
 
 .project-meta-item span {
-
 display: block;
-
 margin-bottom: 0.4rem;
-
 color: var(--color-muted-light);
-
 font-size: 0.7rem;
-
 font-weight: 500;
-
 letter-spacing: 0.07em;
-
 text-transform: uppercase;
-
 }
 
 .project-meta-item p {
-
 margin-bottom: 0;
-
 color: var(--color-ink);
-
 font-size: 0.9rem;
-
 }
 
 .project-detail-cover {
-
 margin-bottom: 5rem;
-
 }
 
 .project-cover-placeholder {
-
 display: grid;
-
 min-height: clamp(280px, 48vw, 560px);
-
 place-items: center;
-
 background: var(--color-accent-light);
-
 color: var(--color-muted);
-
 font-size: 0.75rem;
-
 letter-spacing: 0.06em;
-
 text-align: center;
-
 text-transform: uppercase;
-
 }
 
 .project-cover-placeholder img {
-
   width: 100%;
-
   height: 100%;
-
   object-fit: cover;
-
 }
 
 .project-detail-body {
-
 max-width: 850px;
-
 }
 
 .project-detail-section {
-
 padding-block: 3.5rem;
-
 border-bottom: 1px solid var(--color-line);
-
 }
 
 .project-detail-section h2 {
-
 margin-bottom: 1.2rem;
-
 font-size: clamp(1.8rem, 4vw, 2.6rem);
-
 }
 
 .project-detail-section > p:not(.eyebrow) {
-
 max-width: 680px;
-
 color: var(--color-muted);
-
 }
 
 .project-gallery-placeholder {
-
 display: grid;
-
 min-height: 300px;
-
 margin-block: 2rem;
-
 place-items: center;
-
 background: var(--color-paper-alt);
-
 color: var(--color-muted-light);
-
 font-size: 0.72rem;
-
 letter-spacing: 0.06em;
-
 text-align: center;
-
 text-transform: uppercase;
-
 }
 
 .placeholder-copy {
-
 color: var(--color-muted-light);
-
 font-size: 0.9rem;
-
 }
 
 .project-detail-navigation {
-
 display: flex;
-
 justify-content: space-between;
-
 padding-block: 3rem 5rem;
-
 }
 
 /* Project detail page responsive layout */
 
 @media (max-width: 850px) {
-
 .project-meta {
-
 grid-template-columns: repeat(2, minmax(0, 1fr));
-
 row-gap: 1.5rem;
-
 }
 
 .project-detail-cover {
-
 margin-bottom: 3rem;
-
 }
-
 }
 
 @media (max-width: 640px) {
-
 .project-detail-hero {
-
 padding-block: 2rem 3rem;
-
 }
 
 .back-link {
-
 margin-bottom: 2.5rem;
-
 }
 
 .project-meta {
-
 grid-template-columns: 1fr 1fr;
-
 gap: 1.4rem 1rem;
-
 }
 
 .project-cover-placeholder {
-
 min-height: 260px;
-
 }
 
 .project-detail-section {
-
 padding-block: 2.5rem;
-
 }
 
 .project-gallery-placeholder {
-
 min-height: 220px;
-
 }
 
 .project-detail-navigation {
-
 padding-block: 2.5rem 3.5rem;
-
 }
-
 }
 
 .more-projects {
-
 padding-top: 1rem;
-
 padding-bottom: 3rem;
-
 text-align: center;
-
 }
 
 .more-projects p {
-
 margin: 0;
-
 color: var(--color-muted);
-
 font-size: 0.95rem;
-
 line-height: 1.7;
-
 }
 
 .more-projects strong {
-
 color: var(--color-ink);
-
 font-weight: 600;
-
 }
 
 /* Project image and document galleries — shared styles used by Paint SKU Training Flipbook */
-
 .project-poster-grid {
-
   display: grid;
-
   grid-template-columns: repeat(2, minmax(0, 1fr));
-
   gap: 1.5rem;
-
   margin-block: 2rem;
-
   align-items: start;
-
 }
 
 .project-poster {
-
   display: flex;
-
   min-width: 0;
-
   flex-direction: column;
-
   gap: 0.85rem;
-
   padding: 1rem;
-
   border: 1px solid var(--color-line);
-
   background: var(--color-paper);
-
   color: var(--color-ink);
-
   text-decoration: none;
-
   transition:
-
     border-color var(--transition),
-
     transform var(--transition),
-
     box-shadow var(--transition);
-
 }
 
 .project-poster img {
-
   display: block;
-
   width: 100%;
-
   height: auto;
-
   aspect-ratio: 4 / 3;
-
   object-fit: contain;
-
   background: var(--color-paper-alt);
-
 }
 
 .project-poster > span {
-
   color: var(--color-muted);
-
   font-size: 0.85rem;
-
   line-height: 1.5;
-
 }
 
 .project-poster:hover {
-
   border-color: var(--color-accent);
-
   transform: translateY(-3px);
-
   box-shadow: var(--shadow-soft);
-
 }
 
 .project-poster:focus-visible {
-
   outline: 2px solid var(--color-accent-dark);
-
   outline-offset: 4px;
-
 }
 
 /* Tall research and persona posters */
-
 .project-poster--portrait img {
-
   height: 540px;
-
   aspect-ratio: auto;
-
   object-fit: contain;
-
 }
 
 .project-poster--persona img {
-
   aspect-ratio: 3 / 4;
-
 }
 
 /* Photos from the participatory workshop */
-
 .project-poster--photo img {
-
   aspect-ratio: 4 / 3;
-
   object-fit: cover;
-
 }
 
 /* PDF preview cards */
-
 .project-poster--pdf img {
-
   aspect-ratio: 4 / 3;
-
   object-fit: contain;
-
   background: var(--color-white);
-
 }
 
 /* Final physical prototype */
-
 .project-poster--feature img {
-
   aspect-ratio: 5 / 4;
-
   object-fit: contain;
-
 }
 
 /* Three persona cards */
-
 .project-poster-grid--personas {
-
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
 }
 
 @media (max-width: 850px) {
-
   .project-poster-grid--personas {
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
   }
-
 }
 
 @media (max-width: 640px) {
-
   .project-poster-grid {
-
     grid-template-columns: 1fr;
-
     gap: 1rem;
-
   }
 
   .project-poster-grid--personas {
-
     grid-template-columns: 1fr;
-
   }
 
   .project-poster {
-
     padding: 0.75rem;
-
   }
-
 }
 
+
 /* HeritageHub-only case-study refinements. These do not alter Paint SKU image layouts. */
-
 .heritage-hub-page .project-detail-actions {
-
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 0.8rem;
-
   margin-top: 1.5rem;
-
 }
 
 .heritage-hub-page .project-detail-body {
-
   max-width: 900px;
-
   margin-inline: auto;
-
 }
 
 .heritage-hub-page .project-detail-section {
-
   padding-block: 3rem;
-
   border-bottom: 1px solid var(--color-line);
-
 }
 
 .heritage-hub-page .project-detail-section h2 {
-
   margin-bottom: 0.9rem;
-
 }
 
 .heritage-hub-page .project-detail-section > p:not(.eyebrow) {
-
   max-width: 70ch;
-
   line-height: 1.75;
-
 }
 
 .heritage-hub-page .project-cover-placeholder {
-
   overflow: hidden;
-
 }
 
 .heritage-hub-page .project-cover-placeholder img {
-
   display: block;
-
   width: 100%;
-
   height: auto;
-
   max-height: 560px;
-
   object-fit: contain;
-
   object-position: center;
-
 }
 
 .heritage-hub-page .project-poster-grid {
-
   display: grid;
-
   grid-template-columns: repeat(2, minmax(0, 1fr));
-
   align-items: start;
-
   gap: 1.25rem;
-
   margin-block: 1.5rem 0.25rem;
-
 }
 
 .heritage-hub-page .project-poster-grid--single {
-
   grid-template-columns: minmax(0, 1fr);
-
 }
 
 .heritage-hub-page .project-poster-grid--single .project-poster {
-
   max-width: 100%;
-
 }
 
 .heritage-hub-page .project-poster {
-
   gap: 0.6rem;
-
   padding: 0.65rem;
-
   transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
-
 }
 
 .heritage-hub-page .project-poster img {
-
   height: auto;
-
   max-height: 340px;
-
   aspect-ratio: auto;
-
   object-fit: contain;
-
   object-position: center;
-
   background: var(--color-paper-alt);
-
 }
 
 .heritage-hub-page .project-poster > span {
-
   font-size: 0.8rem;
-
   line-height: 1.45;
-
 }
 
 .heritage-hub-page .project-poster:hover {
-
   transform: translateY(-2px);
-
   border-color: var(--color-accent);
-
   box-shadow: 0 6px 18px rgba(35, 9, 3, 0.06);
-
 }
 
 .heritage-hub-page .project-poster:focus-visible {
-
   outline: 2px solid var(--color-accent-dark);
-
   outline-offset: 3px;
-
 }
 
 .heritage-hub-page .project-poster-grid--contributions .project-poster img {
-
   max-height: 300px;
-
 }
 
 @media (max-width: 640px) {
-
   .heritage-hub-page .project-detail-section {
-
     padding-block: 2.5rem;
-
   }
 
   .heritage-hub-page .project-poster-grid {
-
     grid-template-columns: minmax(0, 1fr);
-
     gap: 1rem;
-
   }
 
   .heritage-hub-page .project-poster-grid--single {
-
     grid-template-columns: minmax(0, 1fr);
-
   }
 
   .heritage-hub-page .project-poster img {
-
     max-height: 360px;
-
   }
 
   .heritage-hub-page .project-cover-placeholder img {
-
     max-height: 420px;
-
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   .heritage-hub-page .project-poster {
-
     transition: none;
-
   }
 
   .heritage-hub-page .project-poster:hover {
-
     transform: none;
-
-  }
-
-}
-
-
-/* Accessibility refinements shared across the portfolio. */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--color-accent-dark);
-  outline-offset: 4px;
-}
-
-/* Keep scroll-reveal content readable if JavaScript is unavailable. */
-@media (scripting: none) {
-  .reveal,
-  [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-
-/* HeritageHub gallery layout only.
-   These rules intentionally do not change Paint SKU image proportions or spacing. */
-.heritage-hub-page .project-poster-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
-}
-
-.heritage-hub-page .project-poster {
-  min-width: 0;
-  align-self: stretch;
-  overflow: hidden;
-}
-
-.heritage-hub-page .project-poster img {
-  display: block;
-  width: 100%;
-  height: 280px;
-  max-height: none;
-  aspect-ratio: auto;
-  object-fit: contain;
-  object-position: center;
-  background: var(--color-paper-alt);
-}
-
-/* Single-column architecture and code examples can use a taller viewing area. */
-.heritage-hub-page .project-poster-grid--single .project-poster img {
-  height: clamp(280px, 42vw, 440px);
-}
-
-.heritage-hub-page .project-poster-grid--contributions .project-poster img {
-  height: 260px;
-}
-
-.heritage-hub-page .project-poster > span {
-  display: block;
-  min-height: 2.8em;
-}
-
-@media (max-width: 800px) {
-  .heritage-hub-page .project-poster-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .heritage-hub-page .project-poster img {
-    height: 250px;
-  }
-}
-
-@media (max-width: 640px) {
-  .heritage-hub-page .project-poster-grid,
-  .heritage-hub-page .project-poster-grid--single {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .heritage-hub-page .project-poster img,
-  .heritage-hub-page .project-poster-grid--single .project-poster img {
-    height: auto;
-    max-height: 420px;
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
-  }
-
-  .heritage-hub-page .project-poster-grid--single .project-poster img {
-    aspect-ratio: auto;
-    min-height: 260px;
-  }
-
-  .heritage-hub-page .project-poster > span {
-    min-height: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  a,
-  button,
-  .project-poster,
-  .project-visual,
-  .project-arrow {
-    transition: none !important;
   }
 }
