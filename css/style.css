@@ -1020,7 +1020,7 @@ transform: translateY(0);
 
 
 /*
-RESPONSIVE LAYOUT — TABLET
+RESPONSIVE LAYOUT - TABLET
 
 These rules adjust the layout when the viewport is 850px
 wide or narrower.
@@ -1059,7 +1059,7 @@ padding-block: 1.5rem;
 }
 
 /*
-RESPONSIVE LAYOUT — MOBILE
+RESPONSIVE LAYOUT - MOBILE
 
 These rules apply at 640px and below.
 
@@ -1359,7 +1359,6 @@ padding-block: 3rem 5rem;
 }
 
 /* Project detail page responsive layout */
-
 @media (max-width: 850px) {
 .project-meta {
 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1420,7 +1419,8 @@ color: var(--color-ink);
 font-weight: 600;
 }
 
-/* Project image and document galleries — shared styles used by Paint SKU Training Flipbook */
+
+/* Project image and document galleries, shared styles used by Paint SKU Training Flipbook */
 .project-poster-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1528,7 +1528,6 @@ font-weight: 600;
 }
 
 
-/* HeritageHub-only case-study refinements. These do not alter Paint SKU image layouts. */
 .heritage-hub-page .project-detail-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1650,4 +1649,212 @@ font-weight: 600;
   .heritage-hub-page .project-poster:hover {
     transform: none;
   }
+
 }
+
+/* HeritageHub image layouts. These rules are scoped to this page so the
+   Paint SKU Training Flipbook galleries keep their existing appearance. */
+.heritage-hub-page .project-detail-body {
+  max-width: 1040px;
+}
+
+.heritage-hub-page .project-poster-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-block: 1.5rem 0.25rem;
+}
+
+.heritage-hub-page .project-poster-grid--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.heritage-hub-page .project-poster-grid--schemas,
+.heritage-hub-page .project-poster-grid--admin,
+.heritage-hub-page .project-poster-grid--features {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.heritage-hub-page .project-poster-grid--wide {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.heritage-hub-page .project-poster-grid--wide .project-poster {
+  width: 100%;
+}
+
+.heritage-hub-page .project-poster {
+  min-width: 0;
+  gap: 0.65rem;
+  padding: 0.7rem;
+}
+
+.heritage-hub-page .project-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 390px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: var(--color-paper-alt);
+}
+
+.heritage-hub-page .project-poster-grid--wide .project-poster img {
+  max-height: 460px;
+}
+
+.heritage-hub-page .project-poster > span {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.heritage-hub-page .project-poster:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  box-shadow: 0 6px 18px rgba(35, 9, 3, 0.06);
+}
+
+.heritage-hub-page .project-poster:focus-visible {
+  outline: 2px solid var(--color-accent-dark);
+  outline-offset: 3px;
+}
+
+.heritage-hub-page .project-contribution-note {
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.35rem;
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-paper-alt);
+  color: var(--color-muted);
+}
+
+.heritage-hub-page .project-contribution-note p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .heritage-hub-page .project-poster-grid--schemas,
+  .heritage-hub-page .project-poster-grid--admin,
+  .heritage-hub-page .project-poster-grid--features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .heritage-hub-page .project-poster-grid,
+  .heritage-hub-page .project-poster-grid--schemas,
+  .heritage-hub-page .project-poster-grid--admin,
+  .heritage-hub-page .project-poster-grid--features,
+  .heritage-hub-page .project-poster-grid--wide {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .heritage-hub-page .project-poster img,
+  .heritage-hub-page .project-poster-grid--wide .project-poster img {
+    max-height: 420px;
+  }
+}
+
+/* DJ Pal galleries use wider, paired layouts for code, interface, and
+   evaluation images. The source image files themselves are unchanged. */
+.dj-pal-page .project-detail-body {
+  max-width: 940px;
+}
+
+.dj-pal-page .project-detail-section {
+  padding-block: 3.1rem;
+}
+
+.dj-pal-page .project-cover-placeholder {
+  overflow: hidden;
+}
+
+.dj-pal-page .project-cover-placeholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.dj-pal-page .project-poster-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.25rem;
+  margin-block: 1.5rem 0.25rem;
+}
+
+.dj-pal-page .project-poster-grid--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.dj-pal-page .project-poster-grid--architecture,
+.dj-pal-page .project-poster-grid--genre,
+.dj-pal-page .project-poster-grid--interface,
+.dj-pal-page .project-poster-grid--comparison {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dj-pal-page .project-poster {
+  min-width: 0;
+  gap: 0.7rem;
+  padding: 0.75rem;
+}
+
+.dj-pal-page .project-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 430px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: var(--color-paper-alt);
+}
+
+.dj-pal-page .project-poster--portrait {
+  width: min(100%, 440px);
+  margin-top: 1.5rem;
+}
+
+.dj-pal-page .project-poster--portrait img {
+  max-height: 560px;
+  background: var(--color-white);
+}
+
+.dj-pal-page .project-poster > span {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.dj-pal-page .project-poster:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  box-shadow: 0 6px 18px rgba(35, 9, 3, 0.06);
+}
+
+.dj-pal-page .project-poster:focus-visible {
+  outline: 2px solid var(--color-accent-dark);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .dj-pal-page .project-poster-grid,
+  .dj-pal-page .project-poster-grid--architecture,
+  .dj-pal-page .project-poster-grid--genre,
+  .dj-pal-page .project-poster-grid--interface,
+  .dj-pal-page .project-poster-grid--comparison {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .dj-pal-page .project-detail-section {
+    padding-block: 2.5rem;
+  }
+
+  .dj-pal-page .project-poster img {
+    max-height: 420px;
+  }
+}
+
