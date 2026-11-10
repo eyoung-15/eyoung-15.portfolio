@@ -1121,6 +1121,16 @@ flex-direction: column;
 padding: 0.85rem 0;
 }
 
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
+    color: var(--color-accent-dark);
+}
+
+.site-nav .nav-contact:hover {
+    color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+}
+
 .featured-work,
 .capabilities-section {
 padding-block: 4rem;
