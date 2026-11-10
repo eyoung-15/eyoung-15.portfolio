@@ -212,7 +212,6 @@ display: none;
 
 /*
 4. TYPOGRAPHY
-
 Shared text styles establish the visual hierarchy.
 
 clamp() creates fluid font sizes that adjust with viewport width
@@ -223,7 +222,6 @@ Letter-spacing is used to adjust the spacing between characters.
 .eyebrow,
 .section-kicker,
 .project-type,
-.project-placeholder-label,
 .capability-number,
 .education-location,
 .footer-year {
@@ -468,123 +466,6 @@ background: #F0E8DF;
 
 .project-visual-rose {
 background: #E8D9DE;
-}
-
-.project-placeholder-label {
-position: absolute;
-right: 1rem;
-bottom: 1rem;
-z-index: 3;
-color: rgba(35, 9, 3, 0.62);
-font-size: 0.62rem;
-}
-
-.placeholder-window,
-.placeholder-browser {
-position: relative;
-display: block;
-width: 57%;
-min-height: 185px;
-overflow: hidden;
-border: 1px solid rgba(35, 9, 3, 0.14);
-border-radius: 5px;
-background: rgba(255, 253, 247, 0.8);
-box-shadow: var(--shadow-soft);
-transform: rotate(-3deg);
-}
-
-.placeholder-window-large {
-width: 65%;
-min-height: 250px;
-}
-
-.placeholder-window-bar {
-display: block;
-height: 22px;
-border-bottom: 1px solid rgba(35, 9, 3, 0.1);
-background: rgba(181, 146, 160, 0.35);
-}
-
-.placeholder-window-line {
-display: block;
-width: 62%;
-height: 7px;
-margin: 22px 0 0 10%;
-border-radius: 5px;
-background: rgba(128, 92, 107, 0.3);
-}
-
-.placeholder-window-line.short {
-width: 38%;
-margin-top: 10px;
-}
-
-.placeholder-window-block {
-display: block;
-width: 80%;
-height: 85px;
-margin: 22px auto 0;
-border-radius: 3px;
-background: rgba(181, 146, 160, 0.35);
-}
-
-.placeholder-browser {
-width: 70%;
-min-height: 190px;
-transform: rotate(2deg);
-}
-
-.placeholder-browser-content {
-display: grid;
-min-height: 168px;
-grid-template-columns: 0.32fr 0.68fr;
-gap: 9px;
-padding: 12px;
-}
-
-.placeholder-browser-sidebar {
-background: rgba(181, 146, 160, 0.4);
-}
-
-.placeholder-browser-main {
-background: rgba(128, 92, 107, 0.13);
-}
-
-.placeholder-art {
-position: relative;
-width: 65%;
-height: 190px;
-}
-
-.placeholder-art-circle {
-position: absolute;
-top: 5%;
-left: 15%;
-width: 150px;
-height: 150px;
-border-radius: 50%;
-background: rgba(181, 146, 160, 0.75);
-}
-
-.placeholder-art-square {
-position: absolute;
-top: 28%;
-right: 12%;
-width: 105px;
-height: 105px;
-border: 1px solid rgba(35, 9, 3, 0.25);
-background: rgba(255, 253, 247, 0.55);
-transform: rotate(12deg);
-}
-
-.placeholder-art-line {
-position: absolute;
-bottom: 7%;
-left: 2%;
-width: 85%;
-height: 1px;
-background: rgba(35, 9, 3, 0.3);
-transform: rotate(-12deg);
 }
 
 .project-info {
@@ -1121,16 +1002,6 @@ flex-direction: column;
 padding: 0.85rem 0;
 }
 
-.site-nav .nav-link:hover,
-.site-nav .nav-link.active {
-    color: var(--color-accent-dark);
-}
-
-.site-nav .nav-contact:hover {
-    color: var(--color-accent-dark);
-    border-color: var(--color-accent-dark);
-}
-
 .featured-work,
 .capabilities-section {
 padding-block: 4rem;
@@ -1214,7 +1085,7 @@ justify-self: end;
 }
 
 /*
-ACCESSIBILITY — REDUCED MOTION
+ACCESSIBILITY - REDUCED MOTION
 
 Some visitors prefer fewer animations because of motion
 sensitivity or accessibility needs.
@@ -1307,24 +1178,6 @@ font-size: 0.9rem;
 margin-bottom: 5rem;
 }
 
-.project-cover-placeholder {
-display: grid;
-min-height: clamp(280px, 48vw, 560px);
-place-items: center;
-background: var(--color-accent-light);
-color: var(--color-muted);
-font-size: 0.75rem;
-letter-spacing: 0.06em;
-text-align: center;
-text-transform: uppercase;
-}
-
-.project-cover-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .project-detail-body {
 max-width: 850px;
 }
@@ -1344,23 +1197,6 @@ max-width: 680px;
 color: var(--color-muted);
 }
 
-.project-gallery-placeholder {
-display: grid;
-min-height: 300px;
-margin-block: 2rem;
-place-items: center;
-background: var(--color-paper-alt);
-color: var(--color-muted-light);
-font-size: 0.72rem;
-letter-spacing: 0.06em;
-text-align: center;
-text-transform: uppercase;
-}
-
-.placeholder-copy {
-color: var(--color-muted-light);
-font-size: 0.9rem;
-}
 
 .project-detail-navigation {
 display: flex;
@@ -1402,10 +1238,6 @@ min-height: 260px;
 padding-block: 2.5rem;
 }
 
-.project-gallery-placeholder {
-min-height: 220px;
-}
-
 .project-detail-navigation {
 padding-block: 2.5rem 3.5rem;
 }
@@ -1430,7 +1262,7 @@ font-weight: 600;
 }
 
 
-/* Project image and document galleries, shared styles used by Paint SKU Training Flipbook */
+/* Project image and document galleries - shared styles used by Paint SKU Training Flipbook */
 .project-poster-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1546,7 +1378,7 @@ font-weight: 600;
 }
 
 .heritage-hub-page .project-detail-body {
-  max-width: 900px;
+  max-width: 1040px;
   margin-inline: auto;
 }
 
@@ -1585,132 +1417,51 @@ font-weight: 600;
   margin-block: 1.5rem 0.25rem;
 }
 
-.heritage-hub-page .project-poster-grid--single {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-.heritage-hub-page .project-poster-grid--single .project-poster {
-  max-width: 100%;
-}
-
-.heritage-hub-page .project-poster {
-  gap: 0.6rem;
-  padding: 0.65rem;
-  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
-}
-
-.heritage-hub-page .project-poster img {
-  height: auto;
-  max-height: 340px;
-  aspect-ratio: auto;
-  object-fit: contain;
-  object-position: center;
-  background: var(--color-paper-alt);
-}
-
-.heritage-hub-page .project-poster > span {
-  font-size: 0.8rem;
-  line-height: 1.45;
-}
-
-.heritage-hub-page .project-poster:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-accent);
-  box-shadow: 0 6px 18px rgba(35, 9, 3, 0.06);
-}
-
-.heritage-hub-page .project-poster:focus-visible {
-  outline: 2px solid var(--color-accent-dark);
-  outline-offset: 3px;
-}
-
-.heritage-hub-page .project-poster-grid--contributions .project-poster img {
-  max-height: 300px;
-}
-
-@media (max-width: 640px) {
-  .heritage-hub-page .project-detail-section {
-    padding-block: 2.5rem;
-  }
-
-  .heritage-hub-page .project-poster-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
-  }
-
-  .heritage-hub-page .project-poster-grid--single {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .heritage-hub-page .project-poster img {
-    max-height: 360px;
-  }
-
-  .heritage-hub-page .project-cover-placeholder img {
-    max-height: 420px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .heritage-hub-page .project-poster {
-    transition: none;
-  }
-
-  .heritage-hub-page .project-poster:hover {
-    transform: none;
-  }
-
-}
-
-/* HeritageHub image layouts. These rules are scoped to this page so the
-   Paint SKU Training Flipbook galleries keep their existing appearance. */
-.heritage-hub-page .project-detail-body {
-  max-width: 1040px;
-}
-
-.heritage-hub-page .project-poster-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin-block: 1.5rem 0.25rem;
-}
-
-.heritage-hub-page .project-poster-grid--single {
+.heritage-hub-page .project-poster-grid--single,
+.heritage-hub-page .project-poster-grid--code,
+.heritage-hub-page .project-poster-grid--wide {
   grid-template-columns: minmax(0, 1fr);
 }
 
 .heritage-hub-page .project-poster-grid--schemas,
 .heritage-hub-page .project-poster-grid--admin,
-.heritage-hub-page .project-poster-grid--features {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.heritage-hub-page .project-poster-grid--features,
+.heritage-hub-page .project-poster-grid--auth,
+.heritage-hub-page .project-poster-grid--contributions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.heritage-hub-page .project-poster-grid--wide {
-  grid-template-columns: minmax(0, 1fr);
-}
-
+.heritage-hub-page .project-poster-grid--single .project-poster,
+.heritage-hub-page .project-poster-grid--code .project-poster,
 .heritage-hub-page .project-poster-grid--wide .project-poster {
   width: 100%;
+  max-width: 100%;
 }
 
 .heritage-hub-page .project-poster {
   min-width: 0;
   gap: 0.65rem;
   padding: 0.7rem;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .heritage-hub-page .project-poster img {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 390px;
+  max-height: 460px;
   aspect-ratio: auto;
   object-fit: contain;
   object-position: center;
   background: var(--color-paper-alt);
 }
 
+.heritage-hub-page .project-poster-grid--code .project-poster img {
+  max-height: none;
+}
+
 .heritage-hub-page .project-poster-grid--wide .project-poster img {
-  max-height: 460px;
+  max-height: 560px;
 }
 
 .heritage-hub-page .project-poster > span {
@@ -1744,29 +1495,51 @@ font-weight: 600;
 @media (max-width: 900px) {
   .heritage-hub-page .project-poster-grid--schemas,
   .heritage-hub-page .project-poster-grid--admin,
-  .heritage-hub-page .project-poster-grid--features {
+  .heritage-hub-page .project-poster-grid--features,
+  .heritage-hub-page .project-poster-grid--auth,
+  .heritage-hub-page .project-poster-grid--contributions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 640px) {
+  .heritage-hub-page .project-detail-section {
+    padding-block: 2.5rem;
+  }
+
   .heritage-hub-page .project-poster-grid,
   .heritage-hub-page .project-poster-grid--schemas,
   .heritage-hub-page .project-poster-grid--admin,
   .heritage-hub-page .project-poster-grid--features,
+  .heritage-hub-page .project-poster-grid--auth,
+  .heritage-hub-page .project-poster-grid--contributions,
+  .heritage-hub-page .project-poster-grid--code,
   .heritage-hub-page .project-poster-grid--wide {
     grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
   }
 
-  .heritage-hub-page .project-poster img,
-  .heritage-hub-page .project-poster-grid--wide .project-poster img {
+  .heritage-hub-page .project-poster img {
+    max-height: 560px;
+  }
+
+  .heritage-hub-page .project-cover-placeholder img {
     max-height: 420px;
   }
 }
 
-/* DJ Pal galleries use wider, paired layouts for code, interface, and
-   evaluation images. The source image files themselves are unchanged. */
+@media (prefers-reduced-motion: reduce) {
+  .heritage-hub-page .project-poster {
+    transition: none;
+  }
+
+  .heritage-hub-page .project-poster:hover {
+    transform: none;
+  }
+}
+
+/* DJ Pal image layouts */
+
 .dj-pal-page .project-detail-body {
   max-width: 940px;
 }
@@ -1816,7 +1589,6 @@ font-weight: 600;
   display: block;
   width: 100%;
   height: auto;
-  /* max-height: 430px; */
   max-height: none;
   aspect-ratio: auto;
   object-fit: contain;
@@ -1865,7 +1637,19 @@ font-weight: 600;
   }
 
   .dj-pal-page .project-poster img {
-    max-height: 420px;
+    max-height: 560px;
   }
 }
 
+/* Keep mobile navigation links readable against the light dropdown background. */
+@media (max-width: 640px) {
+  .site-nav .nav-link:hover,
+  .site-nav .nav-link.active {
+    color: var(--color-accent-dark);
+  }
+
+  .site-nav .nav-contact:hover {
+    color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+  }
+}
