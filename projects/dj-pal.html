@@ -321,8 +321,8 @@
       </article>
 
       <article class="project-detail-section">
-        <p class="eyebrow">08 / Evaluation and limitations</p>
-        <h2>Testing the results and working within model limits</h2>
+        <p class="eyebrow">08 / Evaluation</p>
+        <h2>Testing the results</h2>
         
         <p>I evaluated the remixes through listening tests and by comparing the original and processed audio. 
           I generated Mel spectrograms, onset-strength plots, chroma visualizations, and RMS energy graphs to 
@@ -333,11 +333,6 @@
           Lo-Fi processing generally reduced energy and softened higher frequencies, while 
           EDM transformations were more noticeable when the MusicGen backing track added rhythmic 
           and frequency content.
-        </p>
-
-        <p>Separation quality depended on the original recording, and larger pitch shifts 
-          could make vocals sound unnatural, so I limited how far the vocal stem could be shifted.
-          Processing also took time because Hybrid Demucs and optional MusicGen both require substantial computation.
         </p>
 
         <div class="project-poster-grid project-poster-grid--comparison">
@@ -354,10 +349,6 @@
             <span>Country-to-EDM remix · rhythm comparison</span>
           </a>
         </div>
-        <p>MusicGen produces short clips rather than a backing track for the full song, so I 
-          tempo-adjusted and looped the generated audio. These constraints shaped the pipeline and 
-          highlighted the trade-offs involved in combining machine-learning models with traditional audio processing.
-        </p>
       </article>
 
       <article class="project-detail-section">
