@@ -1547,10 +1547,6 @@ font-weight: 600;
 
 /* DJ Pal image layouts */
 
-/* .dj-pal-page .project-detail-body {
-  max-width: 940px;
-} */
-
 .dj-pal-page .project-detail-section {
   padding-block: 3.1rem;
 }
@@ -1579,7 +1575,10 @@ font-weight: 600;
   grid-template-columns: minmax(0, 1fr);
 }
 
-.dj-pal-page .project-poster-grid--architecture,
+.dj-pal-page .project-poster-grid--architecture {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .dj-pal-page .project-poster-grid--genre,
 .dj-pal-page .project-poster-grid--interface,
 .dj-pal-page .project-poster-grid--comparison {
