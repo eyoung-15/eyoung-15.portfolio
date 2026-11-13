@@ -1425,7 +1425,6 @@ font-weight: 600;
 }
 
 .heritage-hub-page .project-poster-grid--single,
-.heritage-hub-page .project-poster-grid--code,
 .heritage-hub-page .project-poster-grid--wide {
   grid-template-columns: minmax(0, 1fr);
 }
