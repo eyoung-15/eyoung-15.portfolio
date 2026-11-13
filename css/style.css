@@ -1193,7 +1193,7 @@ font-size: clamp(1.8rem, 4vw, 2.6rem);
 }
 
 .project-detail-section > p:not(.eyebrow) {
-max-width: 680px;
+max-width: none;
 color: var(--color-muted);
 }
 
@@ -1386,7 +1386,7 @@ font-weight: 600;
 }
 
 .heritage-hub-page .project-detail-body {
-  max-width: 1040px;
+  /* max-width: 1040px; */
   margin-inline: auto;
 }
 
@@ -1400,7 +1400,7 @@ font-weight: 600;
 }
 
 .heritage-hub-page .project-detail-section > p:not(.eyebrow) {
-  max-width: 70ch;
+  max-width: none;
   line-height: 1.75;
 }
 
@@ -1548,9 +1548,9 @@ font-weight: 600;
 
 /* DJ Pal image layouts */
 
-.dj-pal-page .project-detail-body {
+/* .dj-pal-page .project-detail-body {
   max-width: 940px;
-}
+} */
 
 .dj-pal-page .project-detail-section {
   padding-block: 3.1rem;
