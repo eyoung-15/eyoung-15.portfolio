@@ -579,7 +579,7 @@ font-size: 0.92rem;
 }
 
 /* Contact */
-.contact-section{
+.contact-section {
 padding-block: 2rem 6rem;
 }
 
@@ -1060,7 +1060,7 @@ grid-template-columns: 1fr;
 padding: 1.3rem;
 }
 
-.contact-section{
+.contact-section {
 padding-bottom: 4rem;
 }
 
@@ -1262,7 +1262,7 @@ font-weight: 600;
 }
 
 
-/* Project image and document galleries - shared styles used by Paint SKU Training Flipbook */
+/* Project image and document galleries */
 .project-poster-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1287,14 +1287,11 @@ font-weight: 600;
     box-shadow var(--transition);
 }
 
+/* Shared project detail galleries */
 .project-poster img {
-  display: block;
   width: 100%;
   height: auto;
-  max-height: auto;
-  aspect-ratio: auto;
   object-fit: contain;
-  object-position: center;
   background: var(--color-paper-alt);
 }
 
@@ -1316,16 +1313,9 @@ font-weight: 600;
 }
 
 /* Tall research and persona posters */
-.project-poster--portrait img {
-  height: auto;
-  aspect-ratio: auto;
-  object-fit: contain;
-}
-
 .project-poster--portrait {
   width: min(100%, 440px);
   margin-top: 1.5rem;
-
 }
 
 .project-poster--persona img {
@@ -1368,10 +1358,6 @@ font-weight: 600;
     gap: 1rem;
   }
 
-  .project-poster-grid--personas {
-    grid-template-columns: 1fr;
-  }
-
   .project-poster {
     padding: 0.75rem;
   }
@@ -1403,23 +1389,20 @@ font-weight: 600;
   line-height: 1.75;
 }
 
-.heritage-hub-page .project-cover-placeholder {
+.heritage-hub-page .project-cover-placeholder,
+.dj-pal-page .project-cover-placeholder {
   overflow: hidden;
 }
 
-.heritage-hub-page .project-cover-placeholder img {
-  display: block;
+.heritage-hub-page .project-cover-placeholder img,
+.dj-pal-page .project-cover-placeholder img {
   width: 100%;
   height: auto;
   max-height: 560px;
   object-fit: contain;
-  object-position: center;
 }
 
 .heritage-hub-page .project-poster-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
   gap: 1.25rem;
   margin-block: 1.5rem 0.25rem;
 }
@@ -1427,14 +1410,6 @@ font-weight: 600;
 .heritage-hub-page .project-poster-grid--single,
 .heritage-hub-page .project-poster-grid--wide {
   grid-template-columns: minmax(0, 1fr);
-}
-
-.heritage-hub-page .project-poster-grid--schemas,
-.heritage-hub-page .project-poster-grid--admin,
-.heritage-hub-page .project-poster-grid--features,
-.heritage-hub-page .project-poster-grid--auth,
-.heritage-hub-page .project-poster-grid--contributions {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .heritage-hub-page .project-poster-grid--single .project-poster,
@@ -1452,13 +1427,10 @@ font-weight: 600;
 }
 
 .heritage-hub-page .project-poster img {
-  display: block;
   width: 100%;
   height: auto;
   max-height: 560px;
-  aspect-ratio: auto;
   object-fit: contain;
-  object-position: center;
   background: var(--color-paper-alt);
 }
 
@@ -1466,21 +1438,19 @@ font-weight: 600;
   max-height: none;
 }
 
-.heritage-hub-page .project-poster-grid--wide .project-poster img {
-  max-height: 560px;
-}
-
 .heritage-hub-page .project-poster > span {
   font-size: 0.8rem;
   line-height: 1.5;
 }
 
+.dj-pal-page .project-poster:hover,
 .heritage-hub-page .project-poster:hover {
   transform: translateY(-2px);
   border-color: var(--color-accent);
   box-shadow: 0 6px 18px rgba(35, 9, 3, 0.06);
 }
 
+.dj-pal-page .project-poster:focus-visible,
 .heritage-hub-page .project-poster:focus-visible {
   outline: 2px solid var(--color-accent-dark);
   outline-offset: 3px;
@@ -1498,35 +1468,13 @@ font-weight: 600;
   margin: 0;
 }
 
-@media (max-width: 900px) {
-  .heritage-hub-page .project-poster-grid--schemas,
-  .heritage-hub-page .project-poster-grid--admin,
-  .heritage-hub-page .project-poster-grid--features,
-  .heritage-hub-page .project-poster-grid--auth,
-  .heritage-hub-page .project-poster-grid--contributions {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 640px) {
   .heritage-hub-page .project-detail-section {
     padding-block: 2.5rem;
   }
 
-  .heritage-hub-page .project-poster-grid,
-  .heritage-hub-page .project-poster-grid--schemas,
-  .heritage-hub-page .project-poster-grid--admin,
-  .heritage-hub-page .project-poster-grid--features,
-  .heritage-hub-page .project-poster-grid--auth,
-  .heritage-hub-page .project-poster-grid--contributions,
-  .heritage-hub-page .project-poster-grid--code,
-  .heritage-hub-page .project-poster-grid--wide {
-    grid-template-columns: minmax(0, 1fr);
+  .heritage-hub-page .project-poster-grid {
     gap: 1rem;
-  }
-
-  .heritage-hub-page .project-poster img {
-    max-height: 560px;
   }
 
   .heritage-hub-page .project-cover-placeholder img {
@@ -1550,22 +1498,7 @@ font-weight: 600;
   padding-block: 3.1rem;
 }
 
-.dj-pal-page .project-cover-placeholder {
-  overflow: hidden;
-}
-
-.dj-pal-page .project-cover-placeholder img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 560px;
-  object-fit: contain;
-  object-position: center;
-}
-
 .dj-pal-page .project-poster-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
   gap: 1.25rem;
   margin-block: 1.5rem 0.25rem;
 }
@@ -1591,13 +1524,9 @@ font-weight: 600;
 }
 
 .dj-pal-page .project-poster img {
-  display: block;
   width: 100%;
   height: auto;
-  max-height: none;
-  aspect-ratio: auto;
   object-fit: contain;
-  object-position: center;
   background: var(--color-paper-alt);
 }
 
@@ -1614,17 +1543,6 @@ font-weight: 600;
 .dj-pal-page .project-poster > span {
   font-size: 0.82rem;
   line-height: 1.5;
-}
-
-.dj-pal-page .project-poster:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-accent);
-  box-shadow: 0 6px 18px rgba(35, 9, 3, 0.06);
-}
-
-.dj-pal-page .project-poster:focus-visible {
-  outline: 2px solid var(--color-accent-dark);
-  outline-offset: 3px;
 }
 
 @media (max-width: 640px) {
