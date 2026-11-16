@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>DJ Pal — Emily Youngward</title>
+    <meta
+      name="description"
+      content="DJ Pal is an AI-assisted music remixing system combining source separation, digital signal processing, and user-directed genre transformations."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Emily Youngward" />
+    <meta property="og:title" content="DJ Pal — Emily Youngward" />
+    <meta
+      property="og:description"
+      content="DJ Pal is an AI-assisted music remixing system combining source separation, digital signal processing, and user-directed genre transformations."
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
-
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../javascript/main.js" defer></script>
   </head>
@@ -117,6 +128,8 @@
           <img
             src="../images/DJ_Pal_Interface.png"
             alt="DJ Pal Gradio interface showing the remixing controls"
+            decoding="async"
+            fetchpriority="high"
           />
         </div>
       </section>
@@ -191,8 +204,10 @@
             <img
               loading="lazy"
               decoding="async"
-              src="../images/DJ_Pal_Project_Proposal_Preview.png"
+              src="../images/optimized/DJ_Pal_Project_Proposal_Preview.webp"
               alt="Preview of the project proposal PDF"
+              width="1391"
+              height="1800"
             />
             <span class="pdf-preview-label">View project proposal PDF ↗</span>
           </a>
@@ -233,6 +248,7 @@
                 loading="lazy"
                 src="../images/DJ_Pal_system_diagram.png"
                 alt="Diagram of the DJ Pal audio-processing pipeline"
+                decoding="async"
               />
               <span>DJ Pal audio-processing pipeline</span>
             </a>
@@ -275,6 +291,7 @@
                 loading="lazy"
                 src="../images/stem_seperation_code.png"
                 alt="Code that uses Hybrid Demucs to separate the uploaded song into stems"
+                decoding="async"
               />
               <span>Hybrid Demucs stem separation</span>
             </a>
@@ -325,6 +342,7 @@
                 loading="lazy"
                 src="../images/genre_presets_1.png"
                 alt="Code defining genre-specific gain, reverb, and percussive boost values"
+                decoding="async"
               />
               <span>Genre presets · gain, reverb, and percussion</span>
             </a>
@@ -338,6 +356,7 @@
                 loading="lazy"
                 src="../images/genre_presets_2.png"
                 alt="Code defining target tempo and key values for each genre"
+                decoding="async"
               />
               <span>Genre presets · target tempo and key</span>
             </a>
@@ -384,6 +403,7 @@
                 loading="lazy"
                 src="../images/musicgen_prompts.png"
                 alt="Code defining the prompts used to generate genre-specific backing tracks"
+                decoding="async"
               />
               <span>MusicGen genre prompts</span>
             </a>
@@ -422,6 +442,7 @@
                 loading="lazy"
                 src="../images/dj_pal_upload.png"
                 alt="Gradio interface for uploading an audio file"
+                decoding="async"
               />
               <span>Interface · upload step</span>
             </a>
@@ -435,6 +456,7 @@
                 loading="lazy"
                 src="../images/DJ_Pal_Interface.png"
                 alt="Gradio interface for selecting stems, genre, and MusicGen"
+                decoding="async"
               />
               <span>Interface · remix controls</span>
             </a>
@@ -469,8 +491,11 @@
             >
               <img
                 loading="lazy"
-                src="../images/country-edm-spectrogram.png"
+                src="../images/optimized/country-edm-spectrogram.webp"
                 alt="Mel spectrogram comparison of the original country track and its EDM remix with MusicGen"
+                decoding="async"
+                width="1200"
+                height="600"
               />
               <span>Country-to-EDM remix · spectrogram comparison</span>
             </a>
@@ -484,6 +509,7 @@
                 loading="lazy"
                 src="../images/country-edm-rhythm.png"
                 alt="Rhythm comparison of the original country track and its EDM remix with MusicGen"
+                decoding="async"
               />
               <span>Country-to-EDM remix · rhythm comparison</span>
             </a>
@@ -503,8 +529,11 @@
             >
               <img
                 loading="lazy"
-                src="../images/dj_pal_remix_preview_ui.png"
+                src="../images/optimized/dj_pal_remix_preview_ui.webp"
                 alt="Gradio interface showing the final remix preview, download, and analysis outputs"
+                decoding="async"
+                width="1800"
+                height="942"
               />
               <span>Interface · final remix and analysis</span>
             </a>
@@ -618,8 +647,10 @@
             <img
               loading="lazy"
               decoding="async"
-              src="../images/DJ_Pal_Final_Paper_Preview.png"
+              src="../images/optimized/DJ_Pal_Final_Paper_Preview.webp"
               alt="Preview of the final paper PDF"
+              width="1391"
+              height="1800"
             />
             <span class="pdf-preview-label">View final paper PDF ↗</span>
           </a>
